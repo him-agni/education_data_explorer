@@ -1,0 +1,18 @@
+# Raw Urban Institute data is never committed (check Urban's Data Policy first).
+# Only scripts/pull_urban.py and the manifest are tracked.
+raw/
+*.jsonl
+
+# Secrets and local config
+.env
+.databrickscfg
+*.token
+
+# Python
+__pycache__/
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Databricks
+.databricks/
