@@ -26,9 +26,9 @@ First page of the decision log. Each check is recorded with its date and result.
 ## Urban Institute API (checked 2026-11-22 through a fetch tool, not from the user's machine or Databricks)
 
 - Metadata lists CCD school directory, school enrollment by grade and race, and school-districts directory for 1986-2024.
-- The enrollment endpoint is documented as `/schools/ccd/enrollment/{year}/{grade}/race/`.
+- Correction (2026-11-23): the codebook (`api-endpoints`, endpoint 25) lists `/schools/ccd/enrollment/{year}/{grade}/` ("By grade") as well as the `/race/`, `/sex/` and `/race/sex/` variants. The plan's `grade-{n}` pattern is valid (example `grade-8`). My earlier doubt about it was wrong.
 - A test call to `.../enrollment/2022/grade-99/?fips=51` returned rows with fields year, ncessch, ncessch_num, grade, race, sex, enrollment, fips, leaid.
-- Still to settle in Phase 1 from the codebook: exact endpoint path, grade codes, missing-value codes, meaning of `year`, Title I field, latest year with Virginia data.
+- Phase 1 findings are in `docs/data_dictionary.md` and `docs/decision_log.md`.
 
 ## Phase 0 outcome (2026-11-23)
 
