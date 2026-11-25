@@ -70,3 +70,15 @@ Reconciliation (Virginia 2022): the sum of non-null enrollment over the individu
 ## Cleaning rules
 
 Added as silver is built (Phase 3).
+
+## Outside check against VDOE fall membership (2026-11-25)
+
+Source: Virginia School Quality Profiles, "Commonwealth of Virginia: At-A-Glance" (https://schoolquality.virginia.gov/virginia-state-quality-profile/commonwealth-virginia-at-a-glance). The page says VDOE counts students enrolled in public schools on September 30. Urban `year` 2023 means the 2023-24 school year (fall 2023), so it lines up with VDOE's 2023-24 count.
+
+| Urban year | Urban grade-99 total | VDOE "All Students" | Difference |
+|---|---|---|---|
+| 2023 | 1,258,852 | 1,262,262 (confirmed on the page) | -3,410 (-0.27%) |
+| 2024 | 1,257,315 | 1,261,670 (confirmed on the page) | -4,355 (-0.35%) |
+| 2022 | 1,260,351 | 1,263,605 (from a search summary, not confirmed on the page) | -3,254 (-0.26%) |
+
+The gap is small and consistent. The cause of the gap is not known. Years 2015-2021 are not checked: the VDOE page lists no earlier years.

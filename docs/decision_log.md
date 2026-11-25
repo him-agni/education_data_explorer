@@ -26,3 +26,12 @@ Known catch for Phase 2: `COPY INTO` remembers files by path. If Urban revises d
 
 ## D-008: Grades requested (2026-11-25)
 `enrollment` requests every codebook grade: `pk`, 0-15, 99, 999 (19 requests per year). Empty grades cost a request but protect against silently missing a grade in another year. `enrollment_race` requests only grade 99 (total) for v1.
+
+## D-009: Full pull ran as a serverless Databricks job (2026-11-25)
+`databricks jobs submit` ran `pull_urban.py` on serverless compute and wrote straight to `/Volumes/workspace/bronze/raw/urban`: Virginia 2015-2024, directory and enrollment, 20 files, 0 failures. All 20 files match their manifest checksums, sizes and line counts. Notes for the Phase 5 job definition:
+- A serverless task needs an `environments` block and an `environment_key` on the task. `{"environment_version": "4"}` was accepted (an empty spec is rejected).
+- Databricks' runtime reports `sys.exit(0)` as a failed task (SystemExit). The script now exits only on a non-zero code.
+- On Windows Git Bash, set `MSYS_NO_PATHCONV=1` for `databricks api` and path arguments that start with `/`.
+
+## D-010: Where the manifest is committed (2026-11-25)
+The manifest produced by the Databricks run is committed as `manifests/urban_manifest.json` (public URLs, row counts, checksums, fetch times). Raw data files are not committed.

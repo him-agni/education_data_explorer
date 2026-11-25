@@ -1,0 +1,1446 @@
+{
+  "files": {
+    "directory/fips=51/year=2015": {
+      "bytes": 2675828,
+      "dataset": "directory",
+      "fetched_at": "2026-11-25T13:59:29+00:00",
+      "file": "ccd/directory/fips=51/year=2015/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": null,
+          "pages": 1,
+          "rows": 2153,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/directory/2015/"
+        }
+      ],
+      "rows": 2153,
+      "sha256": "4692d9086e55e75225692af03efe1fd9bdd969c22bdca917c3f125df97c7d6af",
+      "year": 2015
+    },
+    "directory/fips=51/year=2016": {
+      "bytes": 2728588,
+      "dataset": "directory",
+      "fetched_at": "2026-11-25T13:59:35+00:00",
+      "file": "ccd/directory/fips=51/year=2016/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": null,
+          "pages": 1,
+          "rows": 2153,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/directory/2016/"
+        }
+      ],
+      "rows": 2153,
+      "sha256": "7ec4ba904d67ec667a52936e4096b5f0f883115dcfd83482bfc9ced9ce049732",
+      "year": 2016
+    },
+    "directory/fips=51/year=2017": {
+      "bytes": 2737140,
+      "dataset": "directory",
+      "fetched_at": "2026-11-25T13:59:41+00:00",
+      "file": "ccd/directory/fips=51/year=2017/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": null,
+          "pages": 1,
+          "rows": 2159,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/directory/2017/"
+        }
+      ],
+      "rows": 2159,
+      "sha256": "880946b1f3f4528588717360916deb719b0a83c63e708630ff2b7fdff93fbd1a",
+      "year": 2017
+    },
+    "directory/fips=51/year=2018": {
+      "bytes": 2701938,
+      "dataset": "directory",
+      "fetched_at": "2026-11-25T13:59:47+00:00",
+      "file": "ccd/directory/fips=51/year=2018/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": null,
+          "pages": 1,
+          "rows": 2139,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/directory/2018/"
+        }
+      ],
+      "rows": 2139,
+      "sha256": "02806f6abd4494b372cd133e79c9f62542038a4bbbfa46a2267cdc44fa9582b3",
+      "year": 2018
+    },
+    "directory/fips=51/year=2019": {
+      "bytes": 2680818,
+      "dataset": "directory",
+      "fetched_at": "2026-11-25T13:59:53+00:00",
+      "file": "ccd/directory/fips=51/year=2019/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": null,
+          "pages": 1,
+          "rows": 2128,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/directory/2019/"
+        }
+      ],
+      "rows": 2128,
+      "sha256": "d587c5d7d5d712008108a2c23426dd01b3eb85fc4b1eb425a7dfa146fb11e455",
+      "year": 2019
+    },
+    "directory/fips=51/year=2020": {
+      "bytes": 2705259,
+      "dataset": "directory",
+      "fetched_at": "2026-11-25T13:59:59+00:00",
+      "file": "ccd/directory/fips=51/year=2020/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": null,
+          "pages": 1,
+          "rows": 2135,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/directory/2020/"
+        }
+      ],
+      "rows": 2135,
+      "sha256": "6655ca88d80c625d4f7fe0cfe09b1893bfd8304beed306e8018eab2e7a6c9611",
+      "year": 2020
+    },
+    "directory/fips=51/year=2021": {
+      "bytes": 2698762,
+      "dataset": "directory",
+      "fetched_at": "2026-11-25T14:00:05+00:00",
+      "file": "ccd/directory/fips=51/year=2021/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": null,
+          "pages": 1,
+          "rows": 2136,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/directory/2021/"
+        }
+      ],
+      "rows": 2136,
+      "sha256": "4b8636bc127ff322602eb60901629a37750b0b548a6fb0f42f26e002c155dbc1",
+      "year": 2021
+    },
+    "directory/fips=51/year=2022": {
+      "bytes": 2781369,
+      "dataset": "directory",
+      "fetched_at": "2026-11-25T14:00:10+00:00",
+      "file": "ccd/directory/fips=51/year=2022/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": null,
+          "pages": 1,
+          "rows": 2163,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/directory/2022/"
+        }
+      ],
+      "rows": 2163,
+      "sha256": "9e47c968f3ec78c5f48cf8bca806841e2566fc08ea937edb06252499655ea98d",
+      "year": 2022
+    },
+    "directory/fips=51/year=2023": {
+      "bytes": 2775690,
+      "dataset": "directory",
+      "fetched_at": "2026-11-25T14:01:17+00:00",
+      "file": "ccd/directory/fips=51/year=2023/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": null,
+          "pages": 1,
+          "rows": 2160,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/directory/2023/"
+        }
+      ],
+      "rows": 2160,
+      "sha256": "7521fc247d9d32aed2d75899ae56a3a52b6b330a2744727b12f7f3a17cfdacff",
+      "year": 2023
+    },
+    "directory/fips=51/year=2024": {
+      "bytes": 2779807,
+      "dataset": "directory",
+      "fetched_at": "2026-11-25T14:01:23+00:00",
+      "file": "ccd/directory/fips=51/year=2024/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": null,
+          "pages": 1,
+          "rows": 2159,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/directory/2024/"
+        }
+      ],
+      "rows": 2159,
+      "sha256": "badc4ecfca4cd44262d968c8d8584826438f4940e4021e7e88e448ae47ed3102",
+      "year": 2024
+    },
+    "enrollment/fips=51/year=2015": {
+      "bytes": 1955921,
+      "dataset": "enrollment",
+      "fetched_at": "2026-11-25T14:01:47+00:00",
+      "file": "ccd/enrollment/fips=51/year=2015/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": "pk",
+          "pages": 1,
+          "rows": 1088,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2015/grade-pk/"
+        },
+        {
+          "grade": "0",
+          "pages": 1,
+          "rows": 1134,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2015/grade-0/"
+        },
+        {
+          "grade": "1",
+          "pages": 1,
+          "rows": 1135,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2015/grade-1/"
+        },
+        {
+          "grade": "2",
+          "pages": 1,
+          "rows": 1136,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2015/grade-2/"
+        },
+        {
+          "grade": "3",
+          "pages": 1,
+          "rows": 1134,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2015/grade-3/"
+        },
+        {
+          "grade": "4",
+          "pages": 1,
+          "rows": 1131,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2015/grade-4/"
+        },
+        {
+          "grade": "5",
+          "pages": 1,
+          "rows": 1114,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2015/grade-5/"
+        },
+        {
+          "grade": "6",
+          "pages": 1,
+          "rows": 534,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2015/grade-6/"
+        },
+        {
+          "grade": "7",
+          "pages": 1,
+          "rows": 416,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2015/grade-7/"
+        },
+        {
+          "grade": "8",
+          "pages": 1,
+          "rows": 403,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2015/grade-8/"
+        },
+        {
+          "grade": "9",
+          "pages": 1,
+          "rows": 349,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2015/grade-9/"
+        },
+        {
+          "grade": "10",
+          "pages": 1,
+          "rows": 348,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2015/grade-10/"
+        },
+        {
+          "grade": "11",
+          "pages": 1,
+          "rows": 348,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2015/grade-11/"
+        },
+        {
+          "grade": "12",
+          "pages": 1,
+          "rows": 347,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2015/grade-12/"
+        },
+        {
+          "grade": "13",
+          "pages": 1,
+          "rows": 1,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2015/grade-13/"
+        },
+        {
+          "grade": "14",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2015/grade-14/"
+        },
+        {
+          "grade": "15",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2015/grade-15/"
+        },
+        {
+          "grade": "99",
+          "pages": 1,
+          "rows": 1857,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2015/grade-99/"
+        },
+        {
+          "grade": "999",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2015/grade-999/"
+        }
+      ],
+      "rows": 12475,
+      "sha256": "97a2b5d6e5b1d6d7a0ee0a14b94c1345627940583f3933e72230048c02c1f850",
+      "year": 2015
+    },
+    "enrollment/fips=51/year=2016": {
+      "bytes": 1960111,
+      "dataset": "enrollment",
+      "fetched_at": "2026-11-25T14:02:05+00:00",
+      "file": "ccd/enrollment/fips=51/year=2016/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": "pk",
+          "pages": 1,
+          "rows": 1088,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2016/grade-pk/"
+        },
+        {
+          "grade": "0",
+          "pages": 1,
+          "rows": 1132,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2016/grade-0/"
+        },
+        {
+          "grade": "1",
+          "pages": 1,
+          "rows": 1135,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2016/grade-1/"
+        },
+        {
+          "grade": "2",
+          "pages": 1,
+          "rows": 1136,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2016/grade-2/"
+        },
+        {
+          "grade": "3",
+          "pages": 1,
+          "rows": 1136,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2016/grade-3/"
+        },
+        {
+          "grade": "4",
+          "pages": 1,
+          "rows": 1132,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2016/grade-4/"
+        },
+        {
+          "grade": "5",
+          "pages": 1,
+          "rows": 1117,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2016/grade-5/"
+        },
+        {
+          "grade": "6",
+          "pages": 1,
+          "rows": 535,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2016/grade-6/"
+        },
+        {
+          "grade": "7",
+          "pages": 1,
+          "rows": 416,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2016/grade-7/"
+        },
+        {
+          "grade": "8",
+          "pages": 1,
+          "rows": 403,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2016/grade-8/"
+        },
+        {
+          "grade": "9",
+          "pages": 1,
+          "rows": 350,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2016/grade-9/"
+        },
+        {
+          "grade": "10",
+          "pages": 1,
+          "rows": 349,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2016/grade-10/"
+        },
+        {
+          "grade": "11",
+          "pages": 1,
+          "rows": 349,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2016/grade-11/"
+        },
+        {
+          "grade": "12",
+          "pages": 1,
+          "rows": 348,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2016/grade-12/"
+        },
+        {
+          "grade": "13",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2016/grade-13/"
+        },
+        {
+          "grade": "14",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2016/grade-14/"
+        },
+        {
+          "grade": "15",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2016/grade-15/"
+        },
+        {
+          "grade": "99",
+          "pages": 1,
+          "rows": 1876,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2016/grade-99/"
+        },
+        {
+          "grade": "999",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2016/grade-999/"
+        }
+      ],
+      "rows": 12502,
+      "sha256": "b466bbb56e242c703dee869cef2acdc08f34ad7c89d4c6bca07094c0473c81ac",
+      "year": 2016
+    },
+    "enrollment/fips=51/year=2017": {
+      "bytes": 1955729,
+      "dataset": "enrollment",
+      "fetched_at": "2026-11-25T14:02:22+00:00",
+      "file": "ccd/enrollment/fips=51/year=2017/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": "pk",
+          "pages": 1,
+          "rows": 1074,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2017/grade-pk/"
+        },
+        {
+          "grade": "0",
+          "pages": 1,
+          "rows": 1130,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2017/grade-0/"
+        },
+        {
+          "grade": "1",
+          "pages": 1,
+          "rows": 1131,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2017/grade-1/"
+        },
+        {
+          "grade": "2",
+          "pages": 1,
+          "rows": 1132,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2017/grade-2/"
+        },
+        {
+          "grade": "3",
+          "pages": 1,
+          "rows": 1133,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2017/grade-3/"
+        },
+        {
+          "grade": "4",
+          "pages": 1,
+          "rows": 1130,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2017/grade-4/"
+        },
+        {
+          "grade": "5",
+          "pages": 1,
+          "rows": 1119,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2017/grade-5/"
+        },
+        {
+          "grade": "6",
+          "pages": 1,
+          "rows": 538,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2017/grade-6/"
+        },
+        {
+          "grade": "7",
+          "pages": 1,
+          "rows": 418,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2017/grade-7/"
+        },
+        {
+          "grade": "8",
+          "pages": 1,
+          "rows": 403,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2017/grade-8/"
+        },
+        {
+          "grade": "9",
+          "pages": 1,
+          "rows": 349,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2017/grade-9/"
+        },
+        {
+          "grade": "10",
+          "pages": 1,
+          "rows": 348,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2017/grade-10/"
+        },
+        {
+          "grade": "11",
+          "pages": 1,
+          "rows": 348,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2017/grade-11/"
+        },
+        {
+          "grade": "12",
+          "pages": 1,
+          "rows": 348,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2017/grade-12/"
+        },
+        {
+          "grade": "13",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2017/grade-13/"
+        },
+        {
+          "grade": "14",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2017/grade-14/"
+        },
+        {
+          "grade": "15",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2017/grade-15/"
+        },
+        {
+          "grade": "99",
+          "pages": 1,
+          "rows": 1873,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2017/grade-99/"
+        },
+        {
+          "grade": "999",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2017/grade-999/"
+        }
+      ],
+      "rows": 12474,
+      "sha256": "a15b662eb9cc6473dc4f9da39c9ae8e49b68d7d4f0a5ea422e14e80dac066ef3",
+      "year": 2017
+    },
+    "enrollment/fips=51/year=2018": {
+      "bytes": 2024849,
+      "dataset": "enrollment",
+      "fetched_at": "2026-11-25T14:02:40+00:00",
+      "file": "ccd/enrollment/fips=51/year=2018/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": "pk",
+          "pages": 1,
+          "rows": 1072,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2018/grade-pk/"
+        },
+        {
+          "grade": "0",
+          "pages": 1,
+          "rows": 1126,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2018/grade-0/"
+        },
+        {
+          "grade": "1",
+          "pages": 1,
+          "rows": 1127,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2018/grade-1/"
+        },
+        {
+          "grade": "2",
+          "pages": 1,
+          "rows": 1128,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2018/grade-2/"
+        },
+        {
+          "grade": "3",
+          "pages": 1,
+          "rows": 1129,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2018/grade-3/"
+        },
+        {
+          "grade": "4",
+          "pages": 1,
+          "rows": 1126,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2018/grade-4/"
+        },
+        {
+          "grade": "5",
+          "pages": 1,
+          "rows": 1113,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2018/grade-5/"
+        },
+        {
+          "grade": "6",
+          "pages": 1,
+          "rows": 537,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2018/grade-6/"
+        },
+        {
+          "grade": "7",
+          "pages": 1,
+          "rows": 419,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2018/grade-7/"
+        },
+        {
+          "grade": "8",
+          "pages": 1,
+          "rows": 403,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2018/grade-8/"
+        },
+        {
+          "grade": "9",
+          "pages": 1,
+          "rows": 346,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2018/grade-9/"
+        },
+        {
+          "grade": "10",
+          "pages": 1,
+          "rows": 346,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2018/grade-10/"
+        },
+        {
+          "grade": "11",
+          "pages": 1,
+          "rows": 346,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2018/grade-11/"
+        },
+        {
+          "grade": "12",
+          "pages": 1,
+          "rows": 346,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2018/grade-12/"
+        },
+        {
+          "grade": "13",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2018/grade-13/"
+        },
+        {
+          "grade": "14",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2018/grade-14/"
+        },
+        {
+          "grade": "15",
+          "pages": 1,
+          "rows": 241,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2018/grade-15/"
+        },
+        {
+          "grade": "99",
+          "pages": 1,
+          "rows": 2112,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2018/grade-99/"
+        },
+        {
+          "grade": "999",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2018/grade-999/"
+        }
+      ],
+      "rows": 12917,
+      "sha256": "9eb935fd300f5da0f06beb04cd0d1f13bbba59807fa436b931c46fd79fb02d67",
+      "year": 2018
+    },
+    "enrollment/fips=51/year=2019": {
+      "bytes": 2005962,
+      "dataset": "enrollment",
+      "fetched_at": "2026-11-25T14:02:58+00:00",
+      "file": "ccd/enrollment/fips=51/year=2019/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": "pk",
+          "pages": 1,
+          "rows": 1073,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2019/grade-pk/"
+        },
+        {
+          "grade": "0",
+          "pages": 1,
+          "rows": 1129,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2019/grade-0/"
+        },
+        {
+          "grade": "1",
+          "pages": 1,
+          "rows": 1130,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2019/grade-1/"
+        },
+        {
+          "grade": "2",
+          "pages": 1,
+          "rows": 1131,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2019/grade-2/"
+        },
+        {
+          "grade": "3",
+          "pages": 1,
+          "rows": 1132,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2019/grade-3/"
+        },
+        {
+          "grade": "4",
+          "pages": 1,
+          "rows": 1129,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2019/grade-4/"
+        },
+        {
+          "grade": "5",
+          "pages": 1,
+          "rows": 1116,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2019/grade-5/"
+        },
+        {
+          "grade": "6",
+          "pages": 1,
+          "rows": 538,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2019/grade-6/"
+        },
+        {
+          "grade": "7",
+          "pages": 1,
+          "rows": 419,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2019/grade-7/"
+        },
+        {
+          "grade": "8",
+          "pages": 1,
+          "rows": 405,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2019/grade-8/"
+        },
+        {
+          "grade": "9",
+          "pages": 1,
+          "rows": 347,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2019/grade-9/"
+        },
+        {
+          "grade": "10",
+          "pages": 1,
+          "rows": 347,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2019/grade-10/"
+        },
+        {
+          "grade": "11",
+          "pages": 1,
+          "rows": 347,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2019/grade-11/"
+        },
+        {
+          "grade": "12",
+          "pages": 1,
+          "rows": 346,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2019/grade-12/"
+        },
+        {
+          "grade": "13",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2019/grade-13/"
+        },
+        {
+          "grade": "14",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2019/grade-14/"
+        },
+        {
+          "grade": "15",
+          "pages": 1,
+          "rows": 88,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2019/grade-15/"
+        },
+        {
+          "grade": "99",
+          "pages": 1,
+          "rows": 2119,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2019/grade-99/"
+        },
+        {
+          "grade": "999",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2019/grade-999/"
+        }
+      ],
+      "rows": 12796,
+      "sha256": "12cb73c0b3ce2a8f004b3d650037b8c7d6931e31f0c4fdffc8b3c40cbf1eb8c4",
+      "year": 2019
+    },
+    "enrollment/fips=51/year=2020": {
+      "bytes": 2032418,
+      "dataset": "enrollment",
+      "fetched_at": "2026-11-25T14:03:16+00:00",
+      "file": "ccd/enrollment/fips=51/year=2020/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": "pk",
+          "pages": 1,
+          "rows": 1082,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2020/grade-pk/"
+        },
+        {
+          "grade": "0",
+          "pages": 1,
+          "rows": 1129,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2020/grade-0/"
+        },
+        {
+          "grade": "1",
+          "pages": 1,
+          "rows": 1131,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2020/grade-1/"
+        },
+        {
+          "grade": "2",
+          "pages": 1,
+          "rows": 1132,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2020/grade-2/"
+        },
+        {
+          "grade": "3",
+          "pages": 1,
+          "rows": 1132,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2020/grade-3/"
+        },
+        {
+          "grade": "4",
+          "pages": 1,
+          "rows": 1132,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2020/grade-4/"
+        },
+        {
+          "grade": "5",
+          "pages": 1,
+          "rows": 1112,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2020/grade-5/"
+        },
+        {
+          "grade": "6",
+          "pages": 1,
+          "rows": 539,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2020/grade-6/"
+        },
+        {
+          "grade": "7",
+          "pages": 1,
+          "rows": 421,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2020/grade-7/"
+        },
+        {
+          "grade": "8",
+          "pages": 1,
+          "rows": 405,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2020/grade-8/"
+        },
+        {
+          "grade": "9",
+          "pages": 1,
+          "rows": 348,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2020/grade-9/"
+        },
+        {
+          "grade": "10",
+          "pages": 1,
+          "rows": 348,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2020/grade-10/"
+        },
+        {
+          "grade": "11",
+          "pages": 1,
+          "rows": 348,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2020/grade-11/"
+        },
+        {
+          "grade": "12",
+          "pages": 1,
+          "rows": 347,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2020/grade-12/"
+        },
+        {
+          "grade": "13",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2020/grade-13/"
+        },
+        {
+          "grade": "14",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2020/grade-14/"
+        },
+        {
+          "grade": "15",
+          "pages": 1,
+          "rows": 242,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2020/grade-15/"
+        },
+        {
+          "grade": "99",
+          "pages": 1,
+          "rows": 2121,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2020/grade-99/"
+        },
+        {
+          "grade": "999",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2020/grade-999/"
+        }
+      ],
+      "rows": 12969,
+      "sha256": "763416fcddf893f095f0e7b422d4b31b1aed367f41e99e819bf75607019687ff",
+      "year": 2020
+    },
+    "enrollment/fips=51/year=2021": {
+      "bytes": 1970680,
+      "dataset": "enrollment",
+      "fetched_at": "2026-11-25T14:03:35+00:00",
+      "file": "ccd/enrollment/fips=51/year=2021/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": "pk",
+          "pages": 1,
+          "rows": 1084,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-pk/"
+        },
+        {
+          "grade": "0",
+          "pages": 1,
+          "rows": 1130,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-0/"
+        },
+        {
+          "grade": "1",
+          "pages": 1,
+          "rows": 1132,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-1/"
+        },
+        {
+          "grade": "2",
+          "pages": 1,
+          "rows": 1133,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-2/"
+        },
+        {
+          "grade": "3",
+          "pages": 1,
+          "rows": 1134,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-3/"
+        },
+        {
+          "grade": "4",
+          "pages": 1,
+          "rows": 1133,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-4/"
+        },
+        {
+          "grade": "5",
+          "pages": 1,
+          "rows": 1113,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-5/"
+        },
+        {
+          "grade": "6",
+          "pages": 1,
+          "rows": 540,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-6/"
+        },
+        {
+          "grade": "7",
+          "pages": 1,
+          "rows": 422,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-7/"
+        },
+        {
+          "grade": "8",
+          "pages": 1,
+          "rows": 406,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-8/"
+        },
+        {
+          "grade": "9",
+          "pages": 1,
+          "rows": 350,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-9/"
+        },
+        {
+          "grade": "10",
+          "pages": 1,
+          "rows": 350,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-10/"
+        },
+        {
+          "grade": "11",
+          "pages": 1,
+          "rows": 350,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-11/"
+        },
+        {
+          "grade": "12",
+          "pages": 1,
+          "rows": 348,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-12/"
+        },
+        {
+          "grade": "13",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-13/"
+        },
+        {
+          "grade": "14",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-14/"
+        },
+        {
+          "grade": "15",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-15/"
+        },
+        {
+          "grade": "99",
+          "pages": 1,
+          "rows": 1948,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-99/"
+        },
+        {
+          "grade": "999",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-999/"
+        }
+      ],
+      "rows": 12573,
+      "sha256": "9c341d2dd778caeb7e5a6e153a63d5c30445ecc3e45ee27379657c9c776b6bd7",
+      "year": 2021
+    },
+    "enrollment/fips=51/year=2022": {
+      "bytes": 1972083,
+      "dataset": "enrollment",
+      "fetched_at": "2026-11-25T14:03:53+00:00",
+      "file": "ccd/enrollment/fips=51/year=2022/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": "pk",
+          "pages": 1,
+          "rows": 1087,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2022/grade-pk/"
+        },
+        {
+          "grade": "0",
+          "pages": 1,
+          "rows": 1138,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2022/grade-0/"
+        },
+        {
+          "grade": "1",
+          "pages": 1,
+          "rows": 1139,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2022/grade-1/"
+        },
+        {
+          "grade": "2",
+          "pages": 1,
+          "rows": 1140,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2022/grade-2/"
+        },
+        {
+          "grade": "3",
+          "pages": 1,
+          "rows": 1141,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2022/grade-3/"
+        },
+        {
+          "grade": "4",
+          "pages": 1,
+          "rows": 1140,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2022/grade-4/"
+        },
+        {
+          "grade": "5",
+          "pages": 1,
+          "rows": 1125,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2022/grade-5/"
+        },
+        {
+          "grade": "6",
+          "pages": 1,
+          "rows": 542,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2022/grade-6/"
+        },
+        {
+          "grade": "7",
+          "pages": 1,
+          "rows": 423,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2022/grade-7/"
+        },
+        {
+          "grade": "8",
+          "pages": 1,
+          "rows": 408,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2022/grade-8/"
+        },
+        {
+          "grade": "9",
+          "pages": 1,
+          "rows": 353,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2022/grade-9/"
+        },
+        {
+          "grade": "10",
+          "pages": 1,
+          "rows": 353,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2022/grade-10/"
+        },
+        {
+          "grade": "11",
+          "pages": 1,
+          "rows": 352,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2022/grade-11/"
+        },
+        {
+          "grade": "12",
+          "pages": 1,
+          "rows": 352,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2022/grade-12/"
+        },
+        {
+          "grade": "13",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2022/grade-13/"
+        },
+        {
+          "grade": "14",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2022/grade-14/"
+        },
+        {
+          "grade": "15",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2022/grade-15/"
+        },
+        {
+          "grade": "99",
+          "pages": 1,
+          "rows": 1884,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2022/grade-99/"
+        },
+        {
+          "grade": "999",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2022/grade-999/"
+        }
+      ],
+      "rows": 12577,
+      "sha256": "77f2d79648b6e7377728f56cc00ef36a0757ccc18921fba7449c0e3964e355db",
+      "year": 2022
+    },
+    "enrollment/fips=51/year=2023": {
+      "bytes": 1944130,
+      "dataset": "enrollment",
+      "fetched_at": "2026-11-25T14:04:10+00:00",
+      "file": "ccd/enrollment/fips=51/year=2023/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": "pk",
+          "pages": 1,
+          "rows": 1062,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2023/grade-pk/"
+        },
+        {
+          "grade": "0",
+          "pages": 1,
+          "rows": 1128,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2023/grade-0/"
+        },
+        {
+          "grade": "1",
+          "pages": 1,
+          "rows": 1130,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2023/grade-1/"
+        },
+        {
+          "grade": "2",
+          "pages": 1,
+          "rows": 1131,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2023/grade-2/"
+        },
+        {
+          "grade": "3",
+          "pages": 1,
+          "rows": 1132,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2023/grade-3/"
+        },
+        {
+          "grade": "4",
+          "pages": 1,
+          "rows": 1131,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2023/grade-4/"
+        },
+        {
+          "grade": "5",
+          "pages": 1,
+          "rows": 1116,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2023/grade-5/"
+        },
+        {
+          "grade": "6",
+          "pages": 1,
+          "rows": 529,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2023/grade-6/"
+        },
+        {
+          "grade": "7",
+          "pages": 1,
+          "rows": 411,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2023/grade-7/"
+        },
+        {
+          "grade": "8",
+          "pages": 1,
+          "rows": 396,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2023/grade-8/"
+        },
+        {
+          "grade": "9",
+          "pages": 1,
+          "rows": 342,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2023/grade-9/"
+        },
+        {
+          "grade": "10",
+          "pages": 1,
+          "rows": 342,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2023/grade-10/"
+        },
+        {
+          "grade": "11",
+          "pages": 1,
+          "rows": 342,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2023/grade-11/"
+        },
+        {
+          "grade": "12",
+          "pages": 1,
+          "rows": 341,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2023/grade-12/"
+        },
+        {
+          "grade": "13",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2023/grade-13/"
+        },
+        {
+          "grade": "14",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2023/grade-14/"
+        },
+        {
+          "grade": "15",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2023/grade-15/"
+        },
+        {
+          "grade": "99",
+          "pages": 1,
+          "rows": 1868,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2023/grade-99/"
+        },
+        {
+          "grade": "999",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2023/grade-999/"
+        }
+      ],
+      "rows": 12401,
+      "sha256": "9f1dff3ddc407b92b25efcd3fd6a4f570fabd8944f04106f72021d1985ed91e2",
+      "year": 2023
+    },
+    "enrollment/fips=51/year=2024": {
+      "bytes": 1941136,
+      "dataset": "enrollment",
+      "fetched_at": "2026-11-25T14:04:37+00:00",
+      "file": "ccd/enrollment/fips=51/year=2024/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": "pk",
+          "pages": 1,
+          "rows": 1068,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2024/grade-pk/"
+        },
+        {
+          "grade": "0",
+          "pages": 1,
+          "rows": 1125,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2024/grade-0/"
+        },
+        {
+          "grade": "1",
+          "pages": 1,
+          "rows": 1126,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2024/grade-1/"
+        },
+        {
+          "grade": "2",
+          "pages": 1,
+          "rows": 1127,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2024/grade-2/"
+        },
+        {
+          "grade": "3",
+          "pages": 1,
+          "rows": 1128,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2024/grade-3/"
+        },
+        {
+          "grade": "4",
+          "pages": 1,
+          "rows": 1127,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2024/grade-4/"
+        },
+        {
+          "grade": "5",
+          "pages": 1,
+          "rows": 1112,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2024/grade-5/"
+        },
+        {
+          "grade": "6",
+          "pages": 1,
+          "rows": 531,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2024/grade-6/"
+        },
+        {
+          "grade": "7",
+          "pages": 1,
+          "rows": 413,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2024/grade-7/"
+        },
+        {
+          "grade": "8",
+          "pages": 1,
+          "rows": 398,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2024/grade-8/"
+        },
+        {
+          "grade": "9",
+          "pages": 1,
+          "rows": 342,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2024/grade-9/"
+        },
+        {
+          "grade": "10",
+          "pages": 1,
+          "rows": 342,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2024/grade-10/"
+        },
+        {
+          "grade": "11",
+          "pages": 1,
+          "rows": 342,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2024/grade-11/"
+        },
+        {
+          "grade": "12",
+          "pages": 1,
+          "rows": 341,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2024/grade-12/"
+        },
+        {
+          "grade": "13",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2024/grade-13/"
+        },
+        {
+          "grade": "14",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2024/grade-14/"
+        },
+        {
+          "grade": "15",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2024/grade-15/"
+        },
+        {
+          "grade": "99",
+          "pages": 1,
+          "rows": 1860,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2024/grade-99/"
+        },
+        {
+          "grade": "999",
+          "pages": 1,
+          "rows": 0,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2024/grade-999/"
+        }
+      ],
+      "rows": 12382,
+      "sha256": "79b93d6a5702ad089c3492baddc09858dfb6a957e6dce7829c499b6e579b3122",
+      "year": 2024
+    }
+  },
+  "generated_by": "scripts/pull_urban.py",
+  "source": "https://educationdata.urban.org/api/v1"
+}
