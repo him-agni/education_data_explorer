@@ -306,4 +306,8 @@ def main(argv: list[str] | None = None) -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    # Exit only on failure. Databricks' runtime reports even sys.exit(0) as a failed task
+    # (SystemExit), so a success must simply return.
+    exit_code = main()
+    if exit_code:
+        sys.exit(exit_code)
