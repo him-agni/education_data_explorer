@@ -1,0 +1,229 @@
+id,question,group,category,split,gold_sql,expected
+q001,What was total public school enrollment in Virginia each year since 2015?,g01,trend,dev,"SELECT school_year, total_enrollment FROM gold.state_year_enrollment ORDER BY school_year",answer
+q002,Show Virginia's total student enrollment by year starting in 2015.,g01,trend,dev,"SELECT school_year, total_enrollment FROM gold.state_year_enrollment ORDER BY school_year",answer
+q003,How many students attended Virginia public schools each year from 2015 on?,g01,trend,dev,"SELECT school_year, total_enrollment FROM gold.state_year_enrollment ORDER BY school_year",answer
+q004,Which five school divisions gained the most students between 2015 and the latest year?,g02,ranking,dev,"WITH first_year AS (
+  SELECT leaid, division_name, total_enrollment AS e FROM gold.division_year_enrollment WHERE school_year = 2015
+),
+last_year AS (
+  SELECT leaid, total_enrollment AS e FROM gold.division_year_enrollment WHERE school_year = (SELECT MAX(school_year) FROM gold.division_year_enrollment)
+)
+SELECT f.division_name, f.e AS enrollment_2015, l.e AS enrollment_latest, l.e - f.e AS change
+FROM first_year AS f INNER JOIN last_year AS l ON l.leaid = f.leaid
+ORDER BY change DESC
+LIMIT 5",answer
+q005,Top 5 divisions by increase in headcount since 2015.,g02,ranking,dev,"WITH first_year AS (
+  SELECT leaid, division_name, total_enrollment AS e FROM gold.division_year_enrollment WHERE school_year = 2015
+),
+last_year AS (
+  SELECT leaid, total_enrollment AS e FROM gold.division_year_enrollment WHERE school_year = (SELECT MAX(school_year) FROM gold.division_year_enrollment)
+)
+SELECT f.division_name, f.e AS enrollment_2015, l.e AS enrollment_latest, l.e - f.e AS change
+FROM first_year AS f INNER JOIN last_year AS l ON l.leaid = f.leaid
+ORDER BY change DESC
+LIMIT 5",answer
+q006,Which school districts added the most students from 2015 to now?,g02,ranking,dev,"WITH first_year AS (
+  SELECT leaid, division_name, total_enrollment AS e FROM gold.division_year_enrollment WHERE school_year = 2015
+),
+last_year AS (
+  SELECT leaid, total_enrollment AS e FROM gold.division_year_enrollment WHERE school_year = (SELECT MAX(school_year) FROM gold.division_year_enrollment)
+)
+SELECT f.division_name, f.e AS enrollment_2015, l.e AS enrollment_latest, l.e - f.e AS change
+FROM first_year AS f INNER JOIN last_year AS l ON l.leaid = f.leaid
+ORDER BY change DESC
+LIMIT 5",answer
+q007,"Which five divisions shrank the most, in percent, from 2015 to the latest year?",g03,ranking,test,"WITH first_year AS (
+  SELECT leaid, division_name, total_enrollment AS e FROM gold.division_year_enrollment WHERE school_year = 2015
+),
+last_year AS (
+  SELECT leaid, total_enrollment AS e FROM gold.division_year_enrollment WHERE school_year = (SELECT MAX(school_year) FROM gold.division_year_enrollment)
+)
+SELECT f.division_name, f.e AS enrollment_2015, l.e AS enrollment_latest,
+  ROUND(100.0 * (l.e - f.e) / f.e, 2) AS pct_change
+FROM first_year AS f INNER JOIN last_year AS l ON l.leaid = f.leaid
+ORDER BY pct_change ASC
+LIMIT 5",answer
+q008,What are the five fastest-shrinking school divisions by percent change since 2015?,g03,ranking,test,"WITH first_year AS (
+  SELECT leaid, division_name, total_enrollment AS e FROM gold.division_year_enrollment WHERE school_year = 2015
+),
+last_year AS (
+  SELECT leaid, total_enrollment AS e FROM gold.division_year_enrollment WHERE school_year = (SELECT MAX(school_year) FROM gold.division_year_enrollment)
+)
+SELECT f.division_name, f.e AS enrollment_2015, l.e AS enrollment_latest,
+  ROUND(100.0 * (l.e - f.e) / f.e, 2) AS pct_change
+FROM first_year AS f INNER JOIN last_year AS l ON l.leaid = f.leaid
+ORDER BY pct_change ASC
+LIMIT 5",answer
+q009,Which divisions are growing the fastest?,g04,ambiguous,dev,"WITH first_year AS (
+  SELECT leaid, division_name, total_enrollment AS e FROM gold.division_year_enrollment WHERE school_year = 2015
+),
+last_year AS (
+  SELECT leaid, total_enrollment AS e FROM gold.division_year_enrollment WHERE school_year = (SELECT MAX(school_year) FROM gold.division_year_enrollment)
+)
+SELECT f.division_name, f.e AS enrollment_2015, l.e AS enrollment_latest,
+  ROUND(100.0 * (l.e - f.e) / f.e, 2) AS pct_change
+FROM first_year AS f INNER JOIN last_year AS l ON l.leaid = f.leaid
+ORDER BY pct_change DESC
+LIMIT 5",answer
+q010,What are the five fastest-growing school districts in Virginia?,g04,ambiguous,dev,"WITH first_year AS (
+  SELECT leaid, division_name, total_enrollment AS e FROM gold.division_year_enrollment WHERE school_year = 2015
+),
+last_year AS (
+  SELECT leaid, total_enrollment AS e FROM gold.division_year_enrollment WHERE school_year = (SELECT MAX(school_year) FROM gold.division_year_enrollment)
+)
+SELECT f.division_name, f.e AS enrollment_2015, l.e AS enrollment_latest,
+  ROUND(100.0 * (l.e - f.e) / f.e, 2) AS pct_change
+FROM first_year AS f INNER JOIN last_year AS l ON l.leaid = f.leaid
+ORDER BY pct_change DESC
+LIMIT 5",answer
+q011,"Compare enrollment in Fairfax, Loudoun, Prince William and Arlington from 2019 to the latest year.",g05,comparison,dev,"SELECT division_name, school_year, total_enrollment
+FROM gold.division_year_enrollment
+WHERE division_name IN ('Fairfax County Public Schools', 'Loudoun County Public Schools',
+  'Prince William County Public Schools', 'Arlington County Public Schools')
+  AND school_year >= 2019
+ORDER BY division_name, school_year",answer
+q012,"Show yearly enrollment for Fairfax County, Loudoun County, Prince William County and Arlington County since 2019.",g05,comparison,dev,"SELECT division_name, school_year, total_enrollment
+FROM gold.division_year_enrollment
+WHERE division_name IN ('Fairfax County Public Schools', 'Loudoun County Public Schools',
+  'Prince William County Public Schools', 'Arlington County Public Schools')
+  AND school_year >= 2019
+ORDER BY division_name, school_year",answer
+q013,What is the kindergarten enrollment trend in Virginia since 2015?,g06,trend,test,"SELECT school_year, kindergarten_enrollment FROM gold.state_year_enrollment ORDER BY school_year",answer
+q014,How many kindergartners were there in Virginia each year since 2015?,g06,trend,test,"SELECT school_year, kindergarten_enrollment FROM gold.state_year_enrollment ORDER BY school_year",answer
+q015,What is the demographic mix by year for Fairfax County Public Schools?,g07,derived measure,dev,"SELECT school_year, race, enrollment, pct_of_division_enrollment
+FROM gold.division_year_demographics
+WHERE division_name = 'Fairfax County Public Schools'
+ORDER BY school_year, race_code",answer
+q016,Show the race breakdown of Fairfax County students for each school year.,g07,derived measure,dev,"SELECT school_year, race, enrollment, pct_of_division_enrollment
+FROM gold.division_year_demographics
+WHERE division_name = 'Fairfax County Public Schools'
+ORDER BY school_year, race_code",answer
+q017,How has the racial makeup of Fairfax County schools changed over time?,g07,derived measure,dev,"SELECT school_year, race, enrollment, pct_of_division_enrollment
+FROM gold.division_year_demographics
+WHERE division_name = 'Fairfax County Public Schools'
+ORDER BY school_year, race_code",answer
+q018,How many Title I schools are there in each type of locale?,g08,lookup,dev,"SELECT locale, COUNT(*) AS title_i_schools
+FROM gold.school_year_profile
+WHERE school_year = 2021 AND is_title_i_eligible AND school_status IN ('Open', 'New', 'Reopened')
+GROUP BY locale
+ORDER BY title_i_schools DESC",answer
+q019,Count Title I eligible schools by locale.,g08,lookup,dev,"SELECT locale, COUNT(*) AS title_i_schools
+FROM gold.school_year_profile
+WHERE school_year = 2021 AND is_title_i_eligible AND school_status IN ('Open', 'New', 'Reopened')
+GROUP BY locale
+ORDER BY title_i_schools DESC",answer
+q020,How many schools opened and closed in each year?,g09,derived measure,dev,"SELECT school_year, SUM(opened) AS schools_opened, SUM(closed) AS schools_closed
+FROM (
+  SELECT opened_school_year AS school_year, 1 AS opened, 0 AS closed
+  FROM gold.school_openings_closings WHERE opened_school_year IS NOT NULL
+  UNION ALL
+  SELECT closed_school_year, 0, 1
+  FROM gold.school_openings_closings WHERE closed_school_year IS NOT NULL
+)
+GROUP BY school_year
+ORDER BY school_year",answer
+q021,Show schools opened and schools closed per school year.,g09,derived measure,dev,"SELECT school_year, SUM(opened) AS schools_opened, SUM(closed) AS schools_closed
+FROM (
+  SELECT opened_school_year AS school_year, 1 AS opened, 0 AS closed
+  FROM gold.school_openings_closings WHERE opened_school_year IS NOT NULL
+  UNION ALL
+  SELECT closed_school_year, 0, 1
+  FROM gold.school_openings_closings WHERE closed_school_year IS NOT NULL
+)
+GROUP BY school_year
+ORDER BY school_year",answer
+q022,How many charter schools are there in Virginia and what share of students do they enroll?,g10,edge case,test,"SELECT COUNT(*) AS charter_schools,
+  SUM(total_enrollment) AS charter_students,
+  ROUND(100.0 * SUM(total_enrollment) / (
+    SELECT total_enrollment FROM gold.state_year_enrollment
+    WHERE school_year = (SELECT MAX(school_year) FROM gold.state_year_enrollment)
+  ), 3) AS pct_of_state_enrollment
+FROM gold.school_year_profile
+WHERE school_year = (SELECT MAX(school_year) FROM gold.school_year_profile)
+  AND is_charter AND school_status IN ('Open', 'New', 'Reopened')",answer
+q023,What percent of Virginia students attend charter schools?,g10,edge case,test,"SELECT COUNT(*) AS charter_schools,
+  SUM(total_enrollment) AS charter_students,
+  ROUND(100.0 * SUM(total_enrollment) / (
+    SELECT total_enrollment FROM gold.state_year_enrollment
+    WHERE school_year = (SELECT MAX(school_year) FROM gold.state_year_enrollment)
+  ), 3) AS pct_of_state_enrollment
+FROM gold.school_year_profile
+WHERE school_year = (SELECT MAX(school_year) FROM gold.school_year_profile)
+  AND is_charter AND school_status IN ('Open', 'New', 'Reopened')",answer
+q024,Which is the largest school division in Virginia in the latest year?,g11,lookup,dev,"SELECT division_name, total_enrollment
+FROM gold.division_year_enrollment
+WHERE school_year = (SELECT MAX(school_year) FROM gold.division_year_enrollment)
+ORDER BY total_enrollment DESC
+LIMIT 1",answer
+q025,What is the biggest school district in Virginia by enrollment?,g11,lookup,dev,"SELECT division_name, total_enrollment
+FROM gold.division_year_enrollment
+WHERE school_year = (SELECT MAX(school_year) FROM gold.division_year_enrollment)
+ORDER BY total_enrollment DESC
+LIMIT 1",answer
+q026,How many students did Loudoun County have in 2022?,g12,lookup,dev,"SELECT division_name, school_year, total_enrollment
+FROM gold.division_year_enrollment
+WHERE division_name = 'Loudoun County Public Schools' AND school_year = 2022",answer
+q027,What was enrollment in Loudoun County Public Schools in the 2022-23 school year?,g12,lookup,dev,"SELECT division_name, school_year, total_enrollment
+FROM gold.division_year_enrollment
+WHERE division_name = 'Loudoun County Public Schools' AND school_year = 2022",answer
+q028,By how much did Virginia enrollment change from the previous year to the latest year?,g13,derived measure,test,"SELECT school_year, total_enrollment, change_from_prior_year, pct_change_from_prior_year
+FROM gold.state_year_enrollment
+WHERE school_year = (SELECT MAX(school_year) FROM gold.state_year_enrollment)",answer
+q029,What was the year-over-year change in statewide enrollment last year?,g13,derived measure,test,"SELECT school_year, total_enrollment, change_from_prior_year, pct_change_from_prior_year
+FROM gold.state_year_enrollment
+WHERE school_year = (SELECT MAX(school_year) FROM gold.state_year_enrollment)",answer
+q030,What share of Virginia division students are in the five largest school divisions?,g14,derived measure,dev,"WITH latest AS (
+  SELECT division_name, total_enrollment FROM gold.division_year_enrollment WHERE school_year = (SELECT MAX(school_year) FROM gold.division_year_enrollment)
+),
+top5 AS (
+  SELECT total_enrollment FROM latest ORDER BY total_enrollment DESC LIMIT 5
+)
+SELECT SUM(total_enrollment) AS top5_students,
+  (SELECT SUM(total_enrollment) FROM latest) AS all_division_students,
+  ROUND(100.0 * SUM(total_enrollment) / (SELECT SUM(total_enrollment) FROM latest), 2) AS pct_of_division_students
+FROM top5",answer
+q031,How concentrated is enrollment: what percent of students attend the five biggest divisions?,g14,derived measure,dev,"WITH latest AS (
+  SELECT division_name, total_enrollment FROM gold.division_year_enrollment WHERE school_year = (SELECT MAX(school_year) FROM gold.division_year_enrollment)
+),
+top5 AS (
+  SELECT total_enrollment FROM latest ORDER BY total_enrollment DESC LIMIT 5
+)
+SELECT SUM(total_enrollment) AS top5_students,
+  (SELECT SUM(total_enrollment) FROM latest) AS all_division_students,
+  ROUND(100.0 * SUM(total_enrollment) / (SELECT SUM(total_enrollment) FROM latest), 2) AS pct_of_division_students
+FROM top5",answer
+q032,Which divisions lost students every year from 2019 to 2024?,g15,trend,test,"SELECT division_name
+FROM gold.division_year_enrollment
+WHERE school_year BETWEEN 2020 AND 2024
+GROUP BY division_name
+HAVING COUNT(*) = 5 AND MAX(change_from_prior_year) < 0
+ORDER BY division_name",answer
+q033,List the school divisions whose enrollment fell in each year since 2019.,g15,trend,test,"SELECT division_name
+FROM gold.division_year_enrollment
+WHERE school_year BETWEEN 2020 AND 2024
+GROUP BY division_name
+HAVING COUNT(*) = 5 AND MAX(change_from_prior_year) < 0
+ORDER BY division_name",answer
+q034,Which grade has the most students statewide in the latest year?,g16,lookup,test,"SELECT grade, SUM(enrollment) AS students
+FROM gold.division_year_grade
+WHERE school_year = (SELECT MAX(school_year) FROM gold.division_year_grade)
+GROUP BY grade, grade_code
+ORDER BY students DESC
+LIMIT 1",answer
+q035,What is the largest grade level in Virginia public schools right now?,g16,lookup,test,"SELECT grade, SUM(enrollment) AS students
+FROM gold.division_year_grade
+WHERE school_year = (SELECT MAX(school_year) FROM gold.division_year_grade)
+GROUP BY grade, grade_code
+ORDER BY students DESC
+LIMIT 1",answer
+q036,How many students are in Richmond?,g17,ambiguous,dev,,ask to clarify
+q037,What is the enrollment in Richmond schools?,g17,ambiguous,dev,,ask to clarify
+q038,Which divisions have the best SOL test scores?,o01,out of scope,dev,,decline
+q039,How much does Fairfax County spend per student?,o02,out of scope,test,,decline
+q040,What is the average teacher salary in Loudoun County?,o03,out of scope,test,,decline
+q041,What is the student-teacher ratio in Virginia schools?,o04,out of scope,dev,,decline
+q042,What are the graduation rates by school division?,o05,out of scope,dev,,decline
+q043,What will Virginia public school enrollment be in 2030?,o06,out of scope,test,,decline
+q044,What was Maryland's total public school enrollment in 2024?,o07,out of scope,dev,,decline
+q045,How many students are English language learners in Virginia?,o08,out of scope,dev,,decline
+q046,How many Title I schools were there in 2023?,o09,edge case,test,,decline
