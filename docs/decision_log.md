@@ -62,3 +62,7 @@ Consequence for gold: division tables use `is_school_division`. The state total 
 
 ## D-014: Silver rules are tested with injected bad rows (2026-11-25)
 The real Virginia data is clean: 0 rows quarantined. A silent quarantine proves nothing about the rules, so `tests/integration/test_silver_rules.py` runs the real silver SQL against scratch schemas holding deliberately corrupted rows, then drops them. All 9 enrollment reasons fire once, the newer duplicate wins, special values map to NULL plus a status, and the any-year division rule holds. The test needs a warehouse, so it is skipped unless `RUN_WAREHOUSE_TESTS=1` (CI cannot run it).
+
+## D-015: Testing before gold found data issues that gold must carry (2026-11-25)
+Pre-gold testing (rebuild identity, fresh clone from GitHub, 14 manual checks) passed. It also surfaced source-data issues, listed in the data dictionary: a division merger (Covington City into Alleghany Highlands, 2022), 11 division-years with 15% or larger swings that school counts do not explain, and "schools reporting" that varies by year.
+Gold design consequences (proposed for Phase 4, to confirm there): `division_year_enrollment` carries `schools_reporting` beside the enrollment; year-over-year change and percent change are columns; a flag marks swings of 15% or more; Genie instructions say that large single-year changes can come from mergers or reporting changes and that causes are not established. The Phase 5 stability rule should warn on these swings and not fail the run.

@@ -104,3 +104,13 @@ Source: Virginia School Quality Profiles, "Commonwealth of Virginia: At-A-Glance
 | 2022 | 1,260,351 | 1,263,605 (from a search summary, not confirmed on the page) | -3,254 (-0.26%) |
 
 The gap is small and consistent. The cause of the gap is not known. Years 2015-2021 are not checked: the VDOE page lists no earlier years.
+
+## Known data issues (found 2026-11-25, before building gold)
+
+These come from Urban's source data, not from silver cleaning. They change how division-level trends should be read and must reach the Genie instructions.
+
+1. **A division merger.** Covington City Public Schools (`5100990`) has enrollment through 2021 (963 students) and none after. In 2022 its schools Covington High and Jeter-Watson Elementary appear under Alleghany's ID (`5100152`) with status "Changed agency", and Alleghany is renamed Alleghany Highlands Public Schools. Alleghany jumps from 1,911 to 2,878 students (+50.6%); 1,911 + 963 = 2,874. This is consistent with a merger. Divisions reporting enrollment fall from 132 (2015-2021) to 131 (2022-2024).
+2. **Unexplained single-year swings.** 11 division-years change by 15% or more in one year (see `sql/ops/manual_checks.sql`, check 14). Examples: Fredericksburg City -45.0% in 2021 and +93.0% in 2022 with the same 5 schools reporting, Radford City +53.5% in 2020 with the same 4 schools, Giles County +53.5% in 2021. Richmond City falls 25.0% in 2021 while schools with a total drop from 54 to 47. The causes are not established. Questions about "fastest-growing" or "fastest-shrinking" divisions can surface these artifacts.
+3. **Schools reporting varies by year.** Schools with an all-grades total: 1,857 (2015), 2,112 to 2,121 (2018 to 2020), 1,948 (2021), 1,860 to 1,884 (2022 to 2024). Total students stay steady, so a division's "schools reporting" count must travel with its enrollment.
+4. **Missing school totals.** 1 (2020), 5 (2021) and 15 (2022) schools have no enrollment value. Division totals for those years leave those schools out.
+5. **Statewide Title I.** Title I fields exist for 2015-2021 only.
