@@ -28,6 +28,7 @@ SILVER_FILES = [
     "020_district_year.sql",
     "030_school_year.sql",
     "040_enrollment.sql",
+    "050_enrollment_race.sql",
 ]
 T_NEW, T_OLD = "2026-01-02 00:00:00", "2026-01-01 00:00:00"
 
@@ -73,7 +74,7 @@ def built(warehouse):
         run(warehouse, f"DROP SCHEMA IF EXISTS {schema} CASCADE")
         run(warehouse, f"CREATE SCHEMA {schema}")
     try:
-        for table in ("ccd_directory", "ccd_district_directory", "ccd_enrollment"):
+        for table in ("ccd_directory", "ccd_district_directory", "ccd_enrollment", "ccd_enrollment_race"):
             run(warehouse, f"CREATE TABLE test_bronze.{table} AS SELECT * FROM bronze.{table} WHERE 1 = 0")
 
         # (ncessch, leaid, year, fips, grade, race, sex, enrollment, file, ingested_at)
@@ -119,6 +120,29 @@ def built(warehouse):
             warehouse, "ccd_enrollment", [*enrollment_cols, "_ingested_at"], [(*e(enr="99", f="f0"), T_OLD)]
         )
         # duplicate of E1 (older ingest) -> duplicate_loser; the newer value 10 must win
+
+        # Race fixtures. School A reports; school B has a null total, so its zero race rows are not real.
+        race_cols = ["ncessch", "leaid", "year", "fips", "grade", "race", "sex", "enrollment", "_source_file"]
+
+        def r(n="510000000001", race="1", enr="6", sex="99", grade="99", f="f1"):
+            return (n, "5100001", "2022", "51", grade, race, sex, enr, f)
+
+        race_rows = [
+            r(race="1", enr="6"),
+            r(race="2", enr="4"),
+            r(race="99", enr="10"),
+            r(n="510000000002", race="1", enr="0"),  # zero stands in for a missing total
+            r(n="510000000002", race="2", enr="0"),
+            r(n="510000000002", race="99", enr=None),
+            r(race="3", sex="1"),  # unexpected_breakdown
+            r(race="77"),  # unknown_race
+        ]
+        insert(
+            warehouse,
+            "ccd_enrollment_race",
+            [*race_cols, "_ingested_at"],
+            [(*row, T_NEW) for row in race_rows],
+        )
 
         directory_cols = [
             "ncessch", "leaid", "year", "fips", "school_status", "school_level", "charter", "enrollment",
@@ -248,3 +272,37 @@ def test_division_flag_uses_any_year_not_each_year(built):
         ["5100002", "2017", "false"],
     ]
     assert quarantine_counts(built)[("ccd_district_directory", "state_mismatch")] == 1
+
+
+def test_race_groups_and_total_are_kept_apart(built):
+    groups = rows(
+        built,
+        "SELECT race, enrollment FROM test_silver.enrollment_race "
+        "WHERE ncessch='510000000001' ORDER BY race_code",
+    )
+    assert groups == [["White", "6"], ["Black", "4"]]
+    total = rows(
+        built,
+        "SELECT total_enrollment FROM test_silver.enrollment_race_total WHERE ncessch='510000000001'",
+    )
+    assert total == [["10"]]
+
+
+def test_zero_race_rows_become_missing_when_the_school_total_is_missing(built):
+    result = rows(
+        built,
+        "SELECT race, enrollment, enrollment_status FROM test_silver.enrollment_race "
+        "WHERE ncessch='510000000002' ORDER BY race_code",
+    )
+    assert result == [["White", None, "missing"], ["Black", None, "missing"]]
+
+
+def test_race_rows_are_quarantined_with_the_right_reason(built):
+    counts = quarantine_counts(built)
+    assert counts[("ccd_enrollment_race", "unexpected_breakdown")] == 1
+    assert counts[("ccd_enrollment_race", "unknown_race")] == 1
+    bronze = int(rows(built, "SELECT COUNT(*) FROM test_bronze.ccd_enrollment_race")[0][0])
+    silver = int(rows(built, "SELECT COUNT(*) FROM test_silver.enrollment_race")[0][0])
+    total = int(rows(built, "SELECT COUNT(*) FROM test_silver.enrollment_race_total")[0][0])
+    quarantined = sum(v for (t, _), v in counts.items() if t == "ccd_enrollment_race")
+    assert bronze == silver + total + quarantined == 8

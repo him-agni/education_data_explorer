@@ -188,6 +188,25 @@ AS SELECT * FROM VALUES
   (5, 'Reportable program')
 AS t(code, label);
 
+CREATE OR REPLACE TABLE silver.dim_race
+COMMENT 'Race and ethnicity codes. 99 is the all-races total row. Source: Urban Institute codebook variable ''race''.'
+AS SELECT * FROM VALUES
+  (-3, 'Suppressed data'),
+  (-2, 'Not applicable'),
+  (-1, 'Missing/not reported'),
+  (1, 'White'),
+  (2, 'Black'),
+  (3, 'Hispanic'),
+  (4, 'Asian'),
+  (5, 'American Indian or Alaska Native'),
+  (6, 'Native Hawaiian or other Pacific Islander'),
+  (7, 'Two or more races'),
+  (8, 'Nonresident alien'),
+  (9, 'Unknown'),
+  (20, 'Other'),
+  (99, 'Total')
+AS t(code, label);
+
 CREATE OR REPLACE TABLE silver.dim_virtual
 COMMENT 'Virtual school codes. Source: Urban Institute codebook variable ''virtual''.'
 AS SELECT * FROM VALUES

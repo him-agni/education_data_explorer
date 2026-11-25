@@ -32,6 +32,7 @@ DIMENSIONS = {
         "school_type",
         "School type codes (regular, special education, vocational, alternative).",
     ),
+    "dim_race": ("race", "Race and ethnicity codes. 99 is the all-races total row."),
     "dim_virtual": ("virtual", "Virtual school codes."),
     "dim_title_i_status": ("title_i_status", "Title I status codes. Populated for Virginia 2015-2021 only."),
     "dim_agency_type": ("agency_type", "Agency type codes. 1 = regular local school district."),

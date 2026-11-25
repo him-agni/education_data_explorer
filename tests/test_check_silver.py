@@ -26,6 +26,7 @@ def test_every_bronze_table_has_a_balance_rule_and_key_check():
         "bronze.ccd_directory",
         "bronze.ccd_district_directory",
         "bronze.ccd_enrollment",
+        "bronze.ccd_enrollment_race",
     }
     silver_tables = {t for silvers, _ in cs.BALANCES.values() for t in silvers}
     assert silver_tables == set(cs.KEYS)

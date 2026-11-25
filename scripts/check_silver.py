@@ -16,6 +16,10 @@ BALANCES = {
     "bronze.ccd_directory": (["silver.school_year"], "bronze.ccd_directory"),
     "bronze.ccd_district_directory": (["silver.district_year"], "bronze.ccd_district_directory"),
     "bronze.ccd_enrollment": (["silver.enrollment", "silver.enrollment_total"], "bronze.ccd_enrollment"),
+    "bronze.ccd_enrollment_race": (
+        ["silver.enrollment_race", "silver.enrollment_race_total"],
+        "bronze.ccd_enrollment_race",
+    ),
 }
 
 # silver table -> key columns that must be unique
@@ -24,6 +28,8 @@ KEYS = {
     "silver.district_year": ["leaid", "year"],
     "silver.enrollment": ["ncessch", "year", "grade_code"],
     "silver.enrollment_total": ["ncessch", "year"],
+    "silver.enrollment_race": ["ncessch", "year", "grade_code", "race_code"],
+    "silver.enrollment_race_total": ["ncessch", "year", "grade_code"],
 }
 
 # (silver table, id column, required length)
@@ -35,6 +41,10 @@ ID_LENGTHS = [
     ("silver.enrollment", "leaid", 7),
     ("silver.enrollment_total", "ncessch", 12),
     ("silver.enrollment_total", "leaid", 7),
+    ("silver.enrollment_race", "ncessch", 12),
+    ("silver.enrollment_race", "leaid", 7),
+    ("silver.enrollment_race_total", "ncessch", 12),
+    ("silver.enrollment_race_total", "leaid", 7),
 ]
 
 
