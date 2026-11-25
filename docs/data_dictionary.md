@@ -83,11 +83,35 @@ Built by `sql/silver/*.sql`. Every rejected row goes to `silver.quarantine` with
 | 8 | `is_school_division` is true when the agency is a "Regular local school district" (`agency_type` 1) in any year | Greensville County (`5101740`): type 3 in 2015-2016, type 1 after | `true` in all years |
 | 9 | Quarantine rows with a missing key (`missing_key`), an impossible year (`bad_year`, outside 2000-2100), a malformed ID (`bad_id_format`), an unknown grade (`unknown_grade`), a race or sex other than the total (`unexpected_breakdown`), a non-numeric enrollment (`bad_enrollment_value`) or a value below -3 (`unknown_special_value`) | Test cases only: the real data triggers none of these | `silver.quarantine`, with the whole row as JSON |
 
+| 10 | Race rows: when a school's race total (race 99) is missing, the race groups arrive as `0`. Those zeros are not real, so they become NULL with status `missing`. The race 99 row goes to `silver.enrollment_race_total` and is never in `silver.enrollment_race` | School `510003802280`, 2022: race 1 `0`, race 2 `0`, race 99 `null` | White `NULL`, Black `NULL`, both status `missing` |
+
 Notes:
 - Urban delivers `null`, not -1/-2/-3, for missing enrollment in 2020-2022. Silver reads null as `missing`. The codebook does not say whether those nulls mean missing or suppressed.
 - Categorical codes below zero keep their meaning through the decoded label (for example `Not applicable`), so no information is lost.
 - Title I is NULL for 2022-2024 because Urban delivers no values.
 - Left out on purpose: test scores, budgets and staffing. No teacher or finance columns are kept.
+
+## Gold tables (built by `sql/gold/*.sql`)
+
+Designed around the benchmark questions in `eval/questions.csv`. One grain per table, plain column names, every column commented (see `sql/gold/900_comments_and_keys.sql`), informational primary keys on all six, foreign keys from the child tables to `division_year_enrollment`. `school_year` is the year the school year begins (2023 = 2023-24); `school_year_label` shows it as text.
+
+| Table | One row is | Rows | Answers |
+|---|---|---|---|
+| `gold.state_year_enrollment` | a state in a year (all agencies) | 10 | statewide trend, kindergarten trend, year-over-year change |
+| `gold.division_year_enrollment` | a school division in a year | 1,317 | growth, decline, rankings, comparing named divisions |
+| `gold.school_year_profile` | a school in a year | 21,485 | locale, level, charter, Title I (2015-2021), status, enrollment |
+| `gold.division_year_grade` | a division, grade and year | 18,514 | kindergarten and grade-level shifts |
+| `gold.school_openings_closings` | a school ID | 2,270 | schools opened and closed per year |
+| `gold.division_year_demographics` | a division, race group and year | 10,404 | demographic mix and share |
+
+Rules built into gold:
+- **Division** = a regular local school district in any year (132). `division_name` is the agency's LATEST name for every year, so one division has one name. `division_type` is County, City or Other (Other: Alleghany Highlands, Colonial Beach, West Point, whose names say neither).
+- **State total** includes every agency; division totals leave out regional, specialized and state-operated agencies (0.005% to 0.024% of students).
+- **Year-over-year change** compares with the previous calendar year, so a gap year gives NULL. `large_swing_flag` marks one-year changes of 15% or more (11 division-years), which can come from mergers or reporting changes.
+- **Openings and closings** come from the directory status, not from first and last appearance. A school's ID starts with its agency's ID, so a school that changes agency gets a new ID (Covington High: `510099000367` until 2021, `510015200367` from 2022, status "Changed agency"). `opened_school_year` is the first year with status New; `closed_school_year` is the last listed year only when the last status is Closed (121 permanent closings); `had_temporary_closed_status` marks 10 schools that show Closed and return; `changed_agency` marks 2 schools that moved. 72 schools first appear as "Future", which is why the first listed year is not the opening year.
+- **Race shares** are percent of the students whose race was reported (0 to 100), summing to 100 per division and year. The Unknown group exists for only some schools.
+- **Title I** is empty for 2022-2024. `is_title_i_eligible` is true for status codes 1 to 5 (eligible for targeted assistance or schoolwide) and false for code 6 (not eligible).
+- **Benchmark caveat.** The gold SQL for "fastest-growing" uses percent change from 2015 to the latest year. Its top answer is Radford City at +99.94% (1,661 to 3,321), driven by the unexplained 2020 jump listed under known data issues. The gold SQL encodes the documented definition, not a claim about true growth.
 
 ## Divisions (resolved 2026-11-25)
 

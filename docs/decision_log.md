@@ -66,3 +66,23 @@ The real Virginia data is clean: 0 rows quarantined. A silent quarantine proves 
 ## D-015: Testing before gold found data issues that gold must carry (2026-11-25)
 Pre-gold testing (rebuild identity, fresh clone from GitHub, 14 manual checks) passed. It also surfaced source-data issues, listed in the data dictionary: a division merger (Covington City into Alleghany Highlands, 2022), 11 division-years with 15% or larger swings that school counts do not explain, and "schools reporting" that varies by year.
 Gold design consequences (proposed for Phase 4, to confirm there): `division_year_enrollment` carries `schools_reporting` beside the enrollment; year-over-year change and percent change are columns; a flag marks swings of 15% or more; Genie instructions say that large single-year changes can come from mergers or reporting changes and that causes are not established. The Phase 5 stability rule should warn on these swings and not fail the run.
+
+## D-016: Race data in v1; zeros that stand in for missing totals become NULL (2026-11-25)
+Race enrollment (grade 99 split by race, 173,805 rows) is pulled, loaded and cleaned in v1, as recommended at the start. Findings: every school-year has one row for races 1-7 and 99 (race 9 "Unknown" for fewer schools); race groups sum to the race 99 total and to the grade-99 total in all 10 years and school by school (0 mismatches). Trap: for the 21 school-years whose total is null, every race group is `0`, not null. Silver sets those zeros to NULL with status `missing`, so demographic shares do not count non-reporting schools as having no students. The race 99 row is kept in `silver.enrollment_race_total`.
+
+## D-017: Gold design (2026-11-25)
+- Six gold tables built around the benchmark questions (see the data dictionary). Each has one grain, plain column names, comments on every column (83 in total) and an informational primary key. Child tables have informational foreign keys to `division_year_enrollment`.
+- `division_name` is the latest name per division ID, so grouping and joining work across years. History stays in `silver.district_year`.
+- Year-over-year columns compare with year-1 by join, not by `LAG`, so a gap year cannot produce a wrong comparison.
+- `large_swing_flag` (15% or more in one year) and `schools_reporting` / `schools_missing_enrollment` travel with the enrollment (follow-up to D-015).
+- Openings and closings use the directory status (New, Closed, Reopened, Changed agency), not first and last year listed, because a school that changes agency gets a new ID. Covington High is the proof case.
+- `division_type` is derived from the name (County, City, Other). Three divisions fall under Other.
+- Constraints are informational (not enforced); they document the joins for Genie.
+- `scripts/check_gold.py` checks comments, keys, grade and race reconciliation, the division-versus-state gap (limit 0.05%, observed at most 0.024%) and one name per division.
+
+## D-018: Benchmark design (2026-11-25)
+- `eval/questions.csv`: 46 questions in 26 groups: 16 answerable base questions (the 9 seed bullets plus 7 more) with 2 to 3 phrasings each, one "ask to clarify" group (Richmond City versus Richmond County), and 9 declines (8 out of scope plus the Title I 2023 edge case). All 16 gold SQL queries run on the gold tables.
+- Phrasings of one question always share a split, so tuning on a dev phrasing cannot leak into a held-out test phrasing. The test split is 16 rows (35%).
+- Gold SQL uses the documented defaults (growth means percent change; "since 2015" compares 2015 with the latest year; Title I questions use 2021, the last year with data). It does not claim to be the true answer, for example Radford City tops the percent-growth ranking because of an unexplained 2020 jump.
+- `eval/validate_questions.py` enforces the structure (unit-tested) and, with `--live`, runs every gold SQL.
+- The questions are a draft for the project owner's review before Genie is built.

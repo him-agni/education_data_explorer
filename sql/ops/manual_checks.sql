@@ -151,3 +151,80 @@ SELECT
 FROM with_prior AS w
 WHERE prior_students > 0 AND ABS(100.0 * (students - prior_students) / prior_students) >= 15
 ORDER BY ABS(100.0 * (students - prior_students) / prior_students) DESC;
+
+-- ===================== GOLD CHECKS (Phase 4) =====================
+
+-- CHECK 15. Rows in each gold table.
+-- Expected: state_year_enrollment 10 | division_year_enrollment 1317 | school_year_profile 21485
+--           division_year_grade 18514 | school_openings_closings 2270 | division_year_demographics 10404
+SELECT 'gold.state_year_enrollment' AS table_name, COUNT(*) AS row_count FROM gold.state_year_enrollment
+UNION ALL SELECT 'gold.division_year_enrollment', COUNT(*) FROM gold.division_year_enrollment
+UNION ALL SELECT 'gold.school_year_profile', COUNT(*) FROM gold.school_year_profile
+UNION ALL SELECT 'gold.division_year_grade', COUNT(*) FROM gold.division_year_grade
+UNION ALL SELECT 'gold.school_openings_closings', COUNT(*) FROM gold.school_openings_closings
+UNION ALL SELECT 'gold.division_year_demographics', COUNT(*) FROM gold.division_year_demographics;
+
+-- CHECK 16. Fairfax County growth columns, ready-made (Genie never has to invent the formula).
+-- Expected: 2019-20 188887 | 2020-21 180028 (change -8859, -4.69 percent) | 2024-25 179323 (change -1391, -0.77 percent)
+SELECT school_year_label, total_enrollment, change_from_prior_year, pct_change_from_prior_year
+FROM gold.division_year_enrollment
+WHERE division_name = 'Fairfax County Public Schools' AND school_year IN (2019, 2020, 2024)
+ORDER BY school_year;
+
+-- CHECK 17. Fairfax County race mix in 2024; the shares add up to 100.
+-- Expected: White 64095 (35.74) | Black 17464 (9.74) | Hispanic 52413 (29.23) | Asian 33136 (18.48)
+--           American Indian or Alaska Native 523 (0.29) | Native Hawaiian or other Pacific Islander 195 (0.11)
+--           Two or more races 11497 (6.41) | Unknown 0 (0.00). The shares total 100.00.
+SELECT race, enrollment, pct_of_division_enrollment
+FROM gold.division_year_demographics
+WHERE division_name = 'Fairfax County Public Schools' AND school_year = 2024
+ORDER BY race_code;
+
+-- CHECK 18. Kindergarten in Fairfax County from the grade table.
+-- Expected: 2019 13070 | 2024 11393
+SELECT school_year, enrollment AS kindergarten_students
+FROM gold.division_year_grade
+WHERE division_name = 'Fairfax County Public Schools' AND grade = 'Kindergarten' AND school_year IN (2019, 2024)
+ORDER BY school_year;
+
+-- CHECK 19. Schools opened and closed per year, from the directory status.
+-- Expected (year: opened / closed): 2015: 12/13 | 2016: 10/8 | 2017: 14/27 | 2018: 11/16 | 2019: 13/5
+--           2020: 7/5 | 2021: 8/2 | 2022: 13/9 | 2023: 13/16 | 2024: 16/20  (totals: 117 opened, 121 closed)
+SELECT school_year, SUM(opened) AS schools_opened, SUM(closed) AS schools_closed
+FROM (
+  SELECT opened_school_year AS school_year, 1 AS opened, 0 AS closed
+  FROM gold.school_openings_closings WHERE opened_school_year IS NOT NULL
+  UNION ALL
+  SELECT closed_school_year, 0, 1
+  FROM gold.school_openings_closings WHERE closed_school_year IS NOT NULL
+)
+GROUP BY school_year
+ORDER BY school_year;
+
+-- CHECK 20. A school that moved to another division is NOT counted as a closing and an opening.
+-- Expected: 510099000367: listed 2015 to 2021, last status Open, closed year empty, changed_agency false
+--           510015200367: listed 2022 to 2023, first status "Changed agency", last status Closed, closed year 2023
+--                         (a real closing in 2023), opened year empty, changed_agency true
+SELECT ncessch, first_school_year_listed, last_school_year_listed, first_status, last_status,
+  opened_school_year, closed_school_year, changed_agency
+FROM gold.school_openings_closings
+WHERE school_name LIKE 'Covington High%' OR school_name LIKE 'COVINGTON HIGH%'
+ORDER BY first_school_year_listed;
+
+-- CHECK 21. Title I schools by locale in 2021 (the last year Title I data exists).
+-- Expected top rows: Suburb, large 168 | Rural, distant 156 | City, midsize 132 | Rural, fringe 99
+-- For 2022 to 2024 the Title I columns are empty, so the same query returns no rows.
+SELECT locale, COUNT(*) AS title_i_schools
+FROM gold.school_year_profile
+WHERE school_year = 2021 AND is_title_i_eligible AND school_status IN ('Open', 'New', 'Reopened')
+GROUP BY locale
+ORDER BY title_i_schools DESC;
+
+-- CHECK 22. Charter schools in the latest year: a tiny sector.
+-- Expected: 7 schools, 1270 students, 0.101 percent of state enrollment.
+SELECT COUNT(*) AS charter_schools, SUM(total_enrollment) AS charter_students,
+  ROUND(100.0 * SUM(total_enrollment) / (
+    SELECT total_enrollment FROM gold.state_year_enrollment WHERE school_year = 2024
+  ), 3) AS pct_of_state_enrollment
+FROM gold.school_year_profile
+WHERE school_year = 2024 AND is_charter AND school_status IN ('Open', 'New', 'Reopened');
