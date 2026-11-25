@@ -29,9 +29,7 @@ if st.button("Ask Genie"):
     with st.spinner("Asking Genie (a cold start can take about 30 seconds)..."):
         try:
             client = WorkspaceClient()  # uses the app's service principal
-            message = client.genie.start_conversation_and_wait(
-                space_id=space_id, content=question
-            )
+            message = client.genie.start_conversation_and_wait(space_id=space_id, content=question)
         except Exception as exc:  # show the real error: this is a feasibility test
             st.error(f"{type(exc).__name__}: {exc}")
             st.stop()
