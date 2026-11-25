@@ -35,3 +35,12 @@ Known catch for Phase 2: `COPY INTO` remembers files by path. If Urban revises d
 
 ## D-010: Where the manifest is committed (2026-11-25)
 The manifest produced by the Databricks run is committed as `manifests/urban_manifest.json` (public URLs, row counts, checksums, fetch times). Raw data files are not committed.
+
+## D-011: Bronze load design (2026-11-25)
+- Tables are created schema-less (`CREATE TABLE IF NOT EXISTS bronze.x;`) and `COPY INTO ... FORMAT_OPTIONS ('primitivesAsString'='true') COPY_OPTIONS ('mergeSchema'='true')` infers the columns. Confirmed to work on Free Edition. Result: all source columns are strings; only `_ingested_at` is a timestamp, `_source_file` is a string.
+- `PATTERN = '*/*/part.jsonl'` is required for the `fips=<n>/year=<y>/part.jsonl` layout. `**/part.jsonl` fails with PATH_NOT_FOUND (each `*` matches one folder level).
+- `_source_file` values look like `dbfs:/Volumes/<catalog>/bronze/raw/urban/ccd/<dataset>/fips=51/year=2015/part.jsonl`.
+- SQL files use `${catalog}` and `${pulled_on}` placeholders, filled by `scripts/run_sql.py` (`--catalog`, `--set pulled_on=...`). A missing placeholder is an error, never a silent blank.
+- Bronze column comments are generated from Urban's own codebook labels by `scripts/comment_bronze.py`.
+- `scripts/check_bronze.py` compares rows per source file with the manifest (exit code 1 on any mismatch). It is the guard against a half-uploaded or half-loaded file and is a pure, unit-tested comparison.
+- Still open (from D-007): what to do if Urban revises data and a file is re-pulled at the same path. `COPY INTO` would skip it. Current stance: detect via checksum vs manifest, and load revisions from a new path so silver's "keep the latest `_ingested_at`" rule picks the newest row.
