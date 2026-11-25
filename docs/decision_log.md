@@ -81,7 +81,7 @@ Race enrollment (grade 99 split by race, 173,805 rows) is pulled, loaded and cle
 - `scripts/check_gold.py` checks comments, keys, grade and race reconciliation, the division-versus-state gap (limit 0.05%, observed at most 0.024%) and one name per division.
 
 ## D-018: Benchmark design (2026-11-25)
-- `eval/questions.csv`: 46 questions in 26 groups: 16 answerable base questions (the 9 seed bullets plus 7 more) with 2 to 3 phrasings each, one "ask to clarify" group (Richmond City versus Richmond County), and 9 declines (8 out of scope plus the Title I 2023 edge case). All 16 gold SQL queries run on the gold tables.
+- `eval/questions.csv`: 46 questions in 26 groups: 16 answerable base questions (the 8 answerable seed bullets expand into 10 groups, g01 to g10, because the growth and shrink bullet gives 3; groups g11 to g16 are 6 of my own) with 2 to 3 phrasings each, one "ask to clarify" group (Richmond City versus Richmond County), and 9 declines (8 out of scope plus the Title I 2023 edge case). All 16 gold SQL queries run on the gold tables.
 - Phrasings of one question always share a split, so tuning on a dev phrasing cannot leak into a held-out test phrasing. The test split is 16 rows (35%).
 - Gold SQL uses the documented defaults (growth means percent change; "since 2015" compares 2015 with the latest year; Title I questions use 2021, the last year with data). It does not claim to be the true answer, for example Radford City tops the percent-growth ranking because of an unexplained 2020 jump.
 - `eval/validate_questions.py` enforces the structure (unit-tested) and, with `--live`, runs every gold SQL.
