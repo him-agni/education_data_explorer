@@ -1619,6 +1619,186 @@
       "rows": 12382,
       "sha256": "79b93d6a5702ad089c3492baddc09858dfb6a957e6dce7829c499b6e579b3122",
       "year": 2024
+    },
+    "enrollment_race/fips=51/year=2015": {
+      "bytes": 2319472,
+      "dataset": "enrollment_race",
+      "fetched_at": "2026-11-25T15:15:10+00:00",
+      "file": "ccd/enrollment_race/fips=51/year=2015/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": "99",
+          "pages": 2,
+          "rows": 14856,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2015/grade-99/race/"
+        }
+      ],
+      "rows": 14856,
+      "sha256": "5d4e3cab4c3b6b3f9816832289f4fd52def71b19a63316099da6d0b50da79aa2",
+      "year": 2015
+    },
+    "enrollment_race/fips=51/year=2016": {
+      "bytes": 2633950,
+      "dataset": "enrollment_race",
+      "fetched_at": "2026-11-25T15:15:21+00:00",
+      "file": "ccd/enrollment_race/fips=51/year=2016/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": "99",
+          "pages": 2,
+          "rows": 16884,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2016/grade-99/race/"
+        }
+      ],
+      "rows": 16884,
+      "sha256": "42e03b9b91a3f2c293d81678d57eef49191c474aa0985d308d3fc0da36084c64",
+      "year": 2016
+    },
+    "enrollment_race/fips=51/year=2017": {
+      "bytes": 2629806,
+      "dataset": "enrollment_race",
+      "fetched_at": "2026-11-25T15:15:32+00:00",
+      "file": "ccd/enrollment_race/fips=51/year=2017/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": "99",
+          "pages": 2,
+          "rows": 16857,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2017/grade-99/race/"
+        }
+      ],
+      "rows": 16857,
+      "sha256": "3ea73fb801ea590fcd98d06a2b9c71d9abd63bb10d797a759beddd18d820921b",
+      "year": 2017
+    },
+    "enrollment_race/fips=51/year=2018": {
+      "bytes": 2963499,
+      "dataset": "enrollment_race",
+      "fetched_at": "2026-11-25T15:15:43+00:00",
+      "file": "ccd/enrollment_race/fips=51/year=2018/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": "99",
+          "pages": 2,
+          "rows": 19008,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2018/grade-99/race/"
+        }
+      ],
+      "rows": 19008,
+      "sha256": "96224c5be0018e82f3b430e0630bad22a0e8ed89aea5e97efa13198a2633a286",
+      "year": 2018
+    },
+    "enrollment_race/fips=51/year=2019": {
+      "bytes": 2973383,
+      "dataset": "enrollment_race",
+      "fetched_at": "2026-11-25T15:15:55+00:00",
+      "file": "ccd/enrollment_race/fips=51/year=2019/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": "99",
+          "pages": 2,
+          "rows": 19071,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2019/grade-99/race/"
+        }
+      ],
+      "rows": 19071,
+      "sha256": "dea5d6661780471c77695c698383cdc0dac49852d2b1cc7a04205dfd79d5b80e",
+      "year": 2019
+    },
+    "enrollment_race/fips=51/year=2020": {
+      "bytes": 2976109,
+      "dataset": "enrollment_race",
+      "fetched_at": "2026-11-25T15:16:07+00:00",
+      "file": "ccd/enrollment_race/fips=51/year=2020/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": "99",
+          "pages": 2,
+          "rows": 19089,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2020/grade-99/race/"
+        }
+      ],
+      "rows": 19089,
+      "sha256": "4967806117062f3c00b47f9f0dc2ce3a4385ef749797156ccfc6ca9b97e15ba6",
+      "year": 2020
+    },
+    "enrollment_race/fips=51/year=2021": {
+      "bytes": 2734630,
+      "dataset": "enrollment_race",
+      "fetched_at": "2026-11-25T15:16:18+00:00",
+      "file": "ccd/enrollment_race/fips=51/year=2021/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": "99",
+          "pages": 2,
+          "rows": 17532,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-99/race/"
+        }
+      ],
+      "rows": 17532,
+      "sha256": "d9547df23faca4a2698b4b1f75074e93f4f32d7c21270a027125b72381190baa",
+      "year": 2021
+    },
+    "enrollment_race/fips=51/year=2022": {
+      "bytes": 2645536,
+      "dataset": "enrollment_race",
+      "fetched_at": "2026-11-25T15:16:29+00:00",
+      "file": "ccd/enrollment_race/fips=51/year=2022/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": "99",
+          "pages": 2,
+          "rows": 16956,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2022/grade-99/race/"
+        }
+      ],
+      "rows": 16956,
+      "sha256": "859878e50fec8da62f454b30be02099e5ca0b5fc504a9ce11994a54b14143a52",
+      "year": 2022
+    },
+    "enrollment_race/fips=51/year=2023": {
+      "bytes": 2623180,
+      "dataset": "enrollment_race",
+      "fetched_at": "2026-11-25T15:16:40+00:00",
+      "file": "ccd/enrollment_race/fips=51/year=2023/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": "99",
+          "pages": 2,
+          "rows": 16812,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2023/grade-99/race/"
+        }
+      ],
+      "rows": 16812,
+      "sha256": "0f68245f898a522a97e4e4113aed1f3196855b3b6a56fb16f858ae6e188e56ba",
+      "year": 2023
+    },
+    "enrollment_race/fips=51/year=2024": {
+      "bytes": 2612031,
+      "dataset": "enrollment_race",
+      "fetched_at": "2026-11-25T15:16:51+00:00",
+      "file": "ccd/enrollment_race/fips=51/year=2024/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": "99",
+          "pages": 2,
+          "rows": 16740,
+          "url": "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2024/grade-99/race/"
+        }
+      ],
+      "rows": 16740,
+      "sha256": "f57709ad7ed8543647b85548ce0a491d2f128c0241a1da11a8deb59fa1b4d5db",
+      "year": 2024
     }
   },
   "generated_by": "scripts/pull_urban.py",

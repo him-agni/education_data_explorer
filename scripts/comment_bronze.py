@@ -17,7 +17,12 @@ import pathlib
 import re
 import sys
 
-TABLES = ["bronze.ccd_directory", "bronze.ccd_district_directory", "bronze.ccd_enrollment"]
+TABLES = [
+    "bronze.ccd_directory",
+    "bronze.ccd_district_directory",
+    "bronze.ccd_enrollment",
+    "bronze.ccd_enrollment_race",
+]
 LINEAGE = {
     "_source_file": "Lineage: path of the raw file this row was loaded from.",
     "_ingested_at": "Lineage: timestamp when this row was loaded into bronze.",

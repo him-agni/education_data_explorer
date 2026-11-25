@@ -20,6 +20,7 @@ TABLES = {
     "bronze.ccd_directory": "directory",
     "bronze.ccd_district_directory": "district_directory",
     "bronze.ccd_enrollment": "enrollment",
+    "bronze.ccd_enrollment_race": "enrollment_race",
 }
 
 
