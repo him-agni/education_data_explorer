@@ -64,12 +64,34 @@ Reconciliation (Virginia 2022): the sum of non-null enrollment over the individu
 | Title I | `title_i_status`, `title_i_eligible` populated 2015-2021 only. All empty 2022-2024. `title_i_schoolwide` follows the same pattern. `magnet` is empty in 2024. |
 | Enrollment rows | Schools with a grade-99 row: about 1,860-1,880 in 2015-2017 and 2022-2024, about 2,112-2,121 in 2018-2020, 1,948 in 2021. Directory has 2,128-2,163 schools per year. |
 | Total enrollment (grade 99, sum of non-null) | 2015: 1,283,548 | 2016: 1,286,853 | 2017: 1,291,462 | 2018: 1,289,367 | 2019: 1,296,941 | 2020: 1,251,627 | 2021: 1,244,624 | 2022: 1,260,351 | 2023: 1,258,852 | 2024: 1,257,315. Not yet compared with VDOE. |
-| Divisions | 209 distinct `leaid` in the 2024 directory, but Virginia has about 130 school divisions. Needs explaining before gold "division" tables are trusted. |
+| Divisions | 209 distinct `leaid` in the 2024 directory, of which 131 are regular school divisions. Resolved with the district directory, see "Divisions" below. |
 | Enrollment vs directory | Every school with an enrollment row is in that year's directory. Directory schools without enrollment: 299 in 2024. |
 
-## Cleaning rules
+## Cleaning rules (silver)
 
-Added as silver is built (Phase 3).
+Built by `sql/silver/*.sql`. Every rejected row goes to `silver.quarantine` with a reason; nothing is dropped silently. The examples are real rows unless marked as a test case.
+
+| # | Rule | Before (bronze, as delivered) | After (silver) |
+|---|---|---|---|
+| 1 | Trim and left-pad IDs to 12 (school) and 7 (district) digits; a blank becomes missing | Test case: `ncessch = '10000000001'` with `fips = '1'` | `ncessch = '010000000001'` |
+| 2 | `try_cast` every number: a bad value becomes NULL and is caught by a rule, never a crash | `year = '2022'` (string) | `year = 2022` (INT) |
+| 3 | Special values: a null or a negative code becomes NULL plus `enrollment_status` (`reported`, `missing`, `not_applicable`, `suppressed`) | School `510003802280`, grade 3, 2022: `enrollment = null` | `enrollment = NULL`, `enrollment_status = 'missing'` |
+| 4 | The grade 99 "Total" row goes to its own table (`silver.enrollment_total`) and is never in `silver.enrollment` | `grade = '99'` row | Row in `enrollment_total`; 0 rows with `grade_code = 99` in `enrollment` |
+| 5 | One row per key: the latest `_ingested_at` wins (ties: the later `_source_file`). Losers are quarantined as `duplicate_loser` | Test case: two rows for one school, year and grade | Newest row kept |
+| 6 | State check (state-ready): the first two digits of the school and district IDs must equal `fips`, otherwise `state_mismatch` | Test case: `ncessch = '240000000001'`, `fips = '51'` | Quarantined |
+| 7 | Decode categories through lookup tables built from the codebook (`dim_*`) | School `510009000030`, 2019: `school_level = '3'`, `school_status = '1'`, `urban_centric_locale = '13'`, `charter = '1'`, `title_i_status = '6'` | `High`, `Open`, `City, small`, `is_charter = true`, `School is not eligible for either Title I Targeted Assistance or Schoolwide program` |
+| 8 | `is_school_division` is true when the agency is a "Regular local school district" (`agency_type` 1) in any year | Greensville County (`5101740`): type 3 in 2015-2016, type 1 after | `true` in all years |
+| 9 | Quarantine rows with a missing key (`missing_key`), an impossible year (`bad_year`, outside 2000-2100), a malformed ID (`bad_id_format`), an unknown grade (`unknown_grade`), a race or sex other than the total (`unexpected_breakdown`), a non-numeric enrollment (`bad_enrollment_value`) or a value below -3 (`unknown_special_value`) | Test cases only: the real data triggers none of these | `silver.quarantine`, with the whole row as JSON |
+
+Notes:
+- Urban delivers `null`, not -1/-2/-3, for missing enrollment in 2020-2022. Silver reads null as `missing`. The codebook does not say whether those nulls mean missing or suppressed.
+- Categorical codes below zero keep their meaning through the decoded label (for example `Not applicable`), so no information is lost.
+- Title I is NULL for 2022-2024 because Urban delivers no values.
+- Left out on purpose: test scores, budgets and staffing. No teacher or finance columns are kept.
+
+## Divisions (resolved 2026-11-25)
+
+Virginia's 2024 directory lists 209 agencies, but only 131 are regular school divisions (`agency_type` 1). The rest are regional, specialized or state-operated programs (technical centers, Governor's Schools, hospitals, state-operated programs). Agency names change style across years (`ACCOMACK CO PBLC SCHS` became `Accomack County Public Schools`), so display the latest name and join on `leaid`. The district directory (`bronze.ccd_district_directory`) supplies `agency_type`. 132 agencies are regular school divisions in at least one year. Students counted outside those 132 agencies: 97 to 315 per year (0.005% to 0.024%).
 
 ## Outside check against VDOE fall membership (2026-11-25)
 
