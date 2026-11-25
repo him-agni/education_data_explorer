@@ -85,6 +85,11 @@ def test_request_plan_enrollment_covers_every_codebook_grade():
     assert len(urls) == len(set(urls)) == 19  # pk, 0-15, 99, 999
 
 
+def test_request_plan_district_directory_is_one_request():
+    plan = pu.request_plan("district_directory", 2024, 51)
+    assert [s["url"] for s in plan] == [f"{pu.BASE_URL}/school-districts/ccd/directory/2024/"]
+
+
 def test_request_plan_race_pulls_total_grade_only():
     plan = pu.request_plan("enrollment_race", 2023, 51)
     assert [s["url"] for s in plan] == [f"{pu.BASE_URL}/schools/ccd/enrollment/2023/grade-99/race/"]
@@ -231,7 +236,7 @@ def test_manifest_round_trip_and_default(tmp_path):
 def test_main_dry_run_makes_no_requests_and_writes_nothing(tmp_path, capsys):
     code = pu.main(["--years", "2022", "--out", str(tmp_path / "out"), "--dry-run"])
     assert code == 0
-    assert "total requests (before pagination): 20" in capsys.readouterr().out  # 1 directory + 19 grades
+    assert "total requests (before pagination): 21" in capsys.readouterr().out  # 1 + 1 + 19 grades
     assert not (tmp_path / "out").exists()
 
 

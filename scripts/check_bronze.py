@@ -16,7 +16,11 @@ import pathlib
 import sys
 
 # bronze table -> manifest dataset name
-TABLES = {"bronze.ccd_directory": "directory", "bronze.ccd_enrollment": "enrollment"}
+TABLES = {
+    "bronze.ccd_directory": "directory",
+    "bronze.ccd_district_directory": "district_directory",
+    "bronze.ccd_enrollment": "enrollment",
+}
 
 
 def relative_file_key(source_file: str) -> str:

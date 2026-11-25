@@ -180,6 +180,186 @@
       "sha256": "badc4ecfca4cd44262d968c8d8584826438f4940e4021e7e88e448ae47ed3102",
       "year": 2024
     },
+    "district_directory/fips=51/year=2015": {
+      "bytes": 427351,
+      "dataset": "district_directory",
+      "fetched_at": "2026-11-25T14:40:33+00:00",
+      "file": "ccd/district_directory/fips=51/year=2015/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": null,
+          "pages": 1,
+          "rows": 223,
+          "url": "https://educationdata.urban.org/api/v1/school-districts/ccd/directory/2015/"
+        }
+      ],
+      "rows": 223,
+      "sha256": "9d51f423ab96896b64406356dffb3e88d489719647c95452895c1a2cbaff64a3",
+      "year": 2015
+    },
+    "district_directory/fips=51/year=2016": {
+      "bytes": 436839,
+      "dataset": "district_directory",
+      "fetched_at": "2026-11-25T14:40:43+00:00",
+      "file": "ccd/district_directory/fips=51/year=2016/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": null,
+          "pages": 1,
+          "rows": 223,
+          "url": "https://educationdata.urban.org/api/v1/school-districts/ccd/directory/2016/"
+        }
+      ],
+      "rows": 223,
+      "sha256": "d3a531378a4d10a306599f69cd8014fdc8e9f323da1bc5a35946947387a944cc",
+      "year": 2016
+    },
+    "district_directory/fips=51/year=2017": {
+      "bytes": 436995,
+      "dataset": "district_directory",
+      "fetched_at": "2026-11-25T14:40:55+00:00",
+      "file": "ccd/district_directory/fips=51/year=2017/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": null,
+          "pages": 1,
+          "rows": 223,
+          "url": "https://educationdata.urban.org/api/v1/school-districts/ccd/directory/2017/"
+        }
+      ],
+      "rows": 223,
+      "sha256": "1049366d8d1119d51e6c9cd96a189011d64e08608e798b2a2375fbee4258d364",
+      "year": 2017
+    },
+    "district_directory/fips=51/year=2018": {
+      "bytes": 422804,
+      "dataset": "district_directory",
+      "fetched_at": "2026-11-25T14:40:59+00:00",
+      "file": "ccd/district_directory/fips=51/year=2018/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": null,
+          "pages": 1,
+          "rows": 216,
+          "url": "https://educationdata.urban.org/api/v1/school-districts/ccd/directory/2018/"
+        }
+      ],
+      "rows": 216,
+      "sha256": "b0e8f6ee5013e68f0dd8fa43bea634b5357c499dd4400bf0f14a53354fd2941c",
+      "year": 2018
+    },
+    "district_directory/fips=51/year=2019": {
+      "bytes": 420082,
+      "dataset": "district_directory",
+      "fetched_at": "2026-11-25T14:41:03+00:00",
+      "file": "ccd/district_directory/fips=51/year=2019/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": null,
+          "pages": 1,
+          "rows": 216,
+          "url": "https://educationdata.urban.org/api/v1/school-districts/ccd/directory/2019/"
+        }
+      ],
+      "rows": 216,
+      "sha256": "58204007c61040076ccf057af9f29a74277141bc3ed5946209f4a4707446a415",
+      "year": 2019
+    },
+    "district_directory/fips=51/year=2020": {
+      "bytes": 421860,
+      "dataset": "district_directory",
+      "fetched_at": "2026-11-25T14:41:07+00:00",
+      "file": "ccd/district_directory/fips=51/year=2020/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": null,
+          "pages": 1,
+          "rows": 215,
+          "url": "https://educationdata.urban.org/api/v1/school-districts/ccd/directory/2020/"
+        }
+      ],
+      "rows": 215,
+      "sha256": "70367b2664ffe87f5d030fa268088c2c721a8b699f8007628fa9d90a00d4b74d",
+      "year": 2020
+    },
+    "district_directory/fips=51/year=2021": {
+      "bytes": 419811,
+      "dataset": "district_directory",
+      "fetched_at": "2026-11-25T14:42:27+00:00",
+      "file": "ccd/district_directory/fips=51/year=2021/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": null,
+          "pages": 1,
+          "rows": 214,
+          "url": "https://educationdata.urban.org/api/v1/school-districts/ccd/directory/2021/"
+        }
+      ],
+      "rows": 214,
+      "sha256": "00d5df907788dc91c10763908bdfc1a9c1360824ef76ecd844616ffb09ed2079",
+      "year": 2021
+    },
+    "district_directory/fips=51/year=2022": {
+      "bytes": 422116,
+      "dataset": "district_directory",
+      "fetched_at": "2026-11-25T14:42:30+00:00",
+      "file": "ccd/district_directory/fips=51/year=2022/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": null,
+          "pages": 1,
+          "rows": 214,
+          "url": "https://educationdata.urban.org/api/v1/school-districts/ccd/directory/2022/"
+        }
+      ],
+      "rows": 214,
+      "sha256": "b10b42222ffa687b16c03cc8b5d75d5250ae3b494161454124c1a717a240d209",
+      "year": 2022
+    },
+    "district_directory/fips=51/year=2023": {
+      "bytes": 422377,
+      "dataset": "district_directory",
+      "fetched_at": "2026-11-25T14:42:32+00:00",
+      "file": "ccd/district_directory/fips=51/year=2023/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": null,
+          "pages": 1,
+          "rows": 214,
+          "url": "https://educationdata.urban.org/api/v1/school-districts/ccd/directory/2023/"
+        }
+      ],
+      "rows": 214,
+      "sha256": "b02413f32d6c7b1bcb3ed1ddab0cf51fb34e1b874568defd26d1cb586e3ae843",
+      "year": 2023
+    },
+    "district_directory/fips=51/year=2024": {
+      "bytes": 410066,
+      "dataset": "district_directory",
+      "fetched_at": "2026-11-25T14:42:35+00:00",
+      "file": "ccd/district_directory/fips=51/year=2024/part.jsonl",
+      "fips": 51,
+      "requests": [
+        {
+          "grade": null,
+          "pages": 1,
+          "rows": 209,
+          "url": "https://educationdata.urban.org/api/v1/school-districts/ccd/directory/2024/"
+        }
+      ],
+      "rows": 209,
+      "sha256": "a042ad3320b159093a8f2631b10c9fd24e22f3fed565f8973df54a564d8c1d99",
+      "year": 2024
+    },
     "enrollment/fips=51/year=2015": {
       "bytes": 1955921,
       "dataset": "enrollment",

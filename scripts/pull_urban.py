@@ -47,12 +47,16 @@ DATASETS = {
         "path": "schools/ccd/enrollment/{year}/grade-{grade}/",
         "grades": ALL_GRADES,
     },
+    "district_directory": {
+        "path": "school-districts/ccd/directory/{year}/",
+        "grades": [None],
+    },
     "enrollment_race": {
         "path": "schools/ccd/enrollment/{year}/grade-{grade}/race/",
         "grades": ["99"],
     },
 }
-DEFAULT_DATASETS = ["directory", "enrollment"]
+DEFAULT_DATASETS = ["directory", "district_directory", "enrollment"]
 
 RETRY_STATUSES = {429, 500, 502, 503, 504}
 
