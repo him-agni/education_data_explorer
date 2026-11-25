@@ -33,6 +33,12 @@ Observed in the live API for Virginia 2015-2024, grade 99: no negative enrollmen
 
 The 99 row must never be summed with the individual grades.
 
+URL spelling (tested against the live API, Virginia 2022): Pre-K is `grade-pk` (rows carry `grade = -1`; `grade--1` returns HTTP 500). Kindergarten is `grade-0` (also `grade-k`, identical). Grades 1-12 return rows. Grades 13, 14, 15 and 999 returned 0 rows for Virginia 2022, but the pull script still requests them for every year.
+
+Row counts per grade code, Virginia 2022: -1: 1,087 | 0: 1,138 | 1: 1,139 | 2: 1,140 | 3: 1,141 | 4: 1,140 | 5: 1,125 | 6: 542 | 7: 423 | 8: 408 | 9: 353 | 10: 353 | 11: 352 | 12: 352 | 99: 1,884. Total 12,577 rows.
+
+Reconciliation (Virginia 2022): the sum of non-null enrollment over the individual grade rows is 1,260,351, exactly equal to the sum over the grade-99 rows (1,260,351). 211 grade-level rows have `null` enrollment.
+
 ## Race codes (`race`)
 
 1 White | 2 Black | 3 Hispanic | 4 Asian | 5 American Indian or Alaska Native | 6 Native Hawaiian or other Pacific Islander | 7 Two or more races | 8 Nonresident alien | 9 Unknown | 20 Other | **99 Total** | -1/-2/-3 as above. Urban notes that CCD used five categories through 2007 and seven since 2008.

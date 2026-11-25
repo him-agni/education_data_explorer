@@ -16,3 +16,13 @@ Title I fields are empty for 2022-2024 in the Virginia directory (populated 2015
 
 ## D-005: Data terms (2026-11-23)
 Urban's data is under ODC-By v1.0. Attribution is required (cite the portal and the dataset). Urban asks to be notified of public projects. The plan still commits only the pull script and manifest, not raw files.
+
+## D-006: Raw file layout (2026-11-25)
+Files are written to `ccd/<dataset>/fips=<state>/year=<year>/part.jsonl` plus one `manifest.json`. The plan's layout was `ccd/<dataset>/year=<year>/`. The extra `fips=` level supports the state-ready design (D-002). All grade requests for one year go into one file per dataset (the `grade` field is in every row).
+
+## D-007: Deterministic raw files (2026-11-25)
+`pull_urban.py` sorts keys and rows before writing, uses LF line endings and UTF-8. Re-running on unchanged source data gives byte-identical files and the same sha256 (checked: second run of Virginia 2022 reported `unchanged`). Values are never altered. A file is rewritten only when its bytes change.
+Known catch for Phase 2: `COPY INTO` remembers files by path. If Urban revises data and a file is re-pulled with new content at the same path, `COPY INTO` will skip it. Bronze loading must handle this on purpose (for example a forced reload, or rebuilding bronze from the manifest checksums).
+
+## D-008: Grades requested (2026-11-25)
+`enrollment` requests every codebook grade: `pk`, 0-15, 99, 999 (19 requests per year). Empty grades cost a request but protect against silently missing a grade in another year. `enrollment_race` requests only grade 99 (total) for v1.
